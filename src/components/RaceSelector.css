@@ -1,0 +1,180 @@
+.race-selector {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.year-selector {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.year-selector h2 {
+  color: #e10600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.year-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.year-btn {
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: white;
+  border: 3px solid #333;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.year-btn:hover {
+  border-color: #e10600;
+  box-shadow: 0 0 20px rgba(225, 6, 0, 0.5);
+}
+
+.year-btn.active {
+  background: linear-gradient(135deg, #e10600, #ff1e00);
+  border-color: #e10600;
+  box-shadow: 0 0 30px rgba(225, 6, 0, 0.7);
+}
+
+.races-grid h2 {
+  color: #e10600;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.races-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.race-card {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border: 2px solid #333;
+  border-radius: 15px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.race-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e10600, #ff1e00);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.race-card:hover::before {
+  transform: scaleX(1);
+}
+
+.race-card.selected {
+  border-color: #e10600;
+  box-shadow: 0 0 30px rgba(225, 6, 0, 0.5);
+  background: linear-gradient(135deg, #2a0a0a, #3a1a1a);
+}
+
+.race-card.selected::before {
+  transform: scaleX(1);
+}
+
+.race-round {
+  color: #999;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.race-code {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.race-flag {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+}
+
+.race-flag img {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.race-flag .flag-emoji {
+  font-size: 2.5rem;
+}
+
+.race-name {
+  color: white;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.race-location {
+  color: #e10600;
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.race-country {
+  color: #999;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .races-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .year-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+  }
+}
