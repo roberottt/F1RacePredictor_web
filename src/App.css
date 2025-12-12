@@ -47,6 +47,40 @@ body {
   overflow: hidden;
 }
 
+.language-selector {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.lang-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(225, 6, 0, 0.3);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.lang-btn:hover {
+  background: rgba(225, 6, 0, 0.2);
+  border-color: rgba(225, 6, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.lang-btn.active {
+  background: rgba(225, 6, 0, 0.8);
+  border-color: #e10600;
+  box-shadow: 0 0 20px rgba(225, 6, 0, 0.5);
+}
+
 .app-header::before {
   content: '';
   position: absolute;

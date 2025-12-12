@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { getCalendarByYear } from '../data/f1Calendar';
+import { LanguageContext } from '../App';
+import { getTranslation } from '../translations';
 import './RaceSelector.css';
 
 const RaceSelector = ({ onSelectRace }) => {
   const [selectedYear, setSelectedYear] = useState(2025);
   const [selectedRace, setSelectedRace] = useState(null);
+  const { language } = useContext(LanguageContext);
 
   const calendar = getCalendarByYear(selectedYear);
 
@@ -27,7 +30,7 @@ const RaceSelector = ({ onSelectRace }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2>Select Season</h2>
+        <h2>{getTranslation(language, 'selectSeason')}</h2>
         <div className="year-buttons">
           <motion.button
             className={`year-btn ${selectedYear === 2025 ? 'active' : ''}`}
@@ -54,7 +57,7 @@ const RaceSelector = ({ onSelectRace }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2>Select Race</h2>
+        <h2>{getTranslation(language, 'selectRace')}</h2>
         <div className="races-container">
           {calendar.map((race, index) => (
             <motion.div
@@ -67,7 +70,7 @@ const RaceSelector = ({ onSelectRace }) => {
               whileTap={{ scale: 0.98 }}
               onClick={() => handleRaceSelect(race)}
             >
-              <div className="race-round">Round {race.round}</div>
+              <div className="race-round">{getTranslation(language, 'round')} {race.round}</div>
               <div className="race-flag">
                 <img 
                   src={`https://flagcdn.com/w80/${race.code.toLowerCase()}.png`}

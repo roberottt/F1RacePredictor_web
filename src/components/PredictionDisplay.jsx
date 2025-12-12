@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { LanguageContext } from '../App';
+import { getTranslation } from '../translations';
 import './PredictionDisplay.css';
 
 const teamColors = {
@@ -20,6 +22,7 @@ const PredictionDisplay = ({ year, round }) => {
   const [predictions, setPredictions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
     if (year && round) {
@@ -81,7 +84,7 @@ const PredictionDisplay = ({ year, round }) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            Analyzing race data...
+            {getTranslation(language, 'analyzingRaceData')}
           </motion.p>
         </div>
       </div>
@@ -97,14 +100,14 @@ const PredictionDisplay = ({ year, round }) => {
         animate={{ opacity: 1 }}
       >
         <div className="error-container">
-          <p className="error-message">⚠️ {error}</p>
+          <p className="error-message">⚠️ {getTranslation(language, 'errorLoadingPredictions')}</p>
           <motion.button 
             className="retry-btn"
             onClick={fetchPredictions}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Retry
+            {getTranslation(language, 'retry')}
           </motion.button>
         </div>
       </motion.div>
@@ -128,7 +131,7 @@ const PredictionDisplay = ({ year, round }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        🏁 Race Prediction - {year} Round {round}
+        🏁 {getTranslation(language, 'racePrediction')} - {year} {getTranslation(language, 'round')} {round}
       </motion.h2>
 
       <div className="predictions-container">
@@ -162,13 +165,13 @@ const PredictionDisplay = ({ year, round }) => {
               <div className="prediction-stats">
                 {prediction.grid_position && (
                   <div className="stat">
-                    <span className="stat-label">Grid</span>
+                    <span className="stat-label">{getTranslation(language, 'grid')}</span>
                     <span className="stat-value">P{prediction.grid_position}</span>
                   </div>
                 )}
                 {prediction.probability && (
                   <div className="stat">
-                    <span className="stat-label">Probability</span>
+                    <span className="stat-label">{getTranslation(language, 'probability')}</span>
                     <span className="stat-value">{(prediction.probability * 100).toFixed(1)}%</span>
                   </div>
                 )}
