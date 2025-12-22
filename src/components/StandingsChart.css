@@ -1,0 +1,237 @@
+.chart-container {
+  width: 100%;
+  padding: 2rem;
+  background: rgba(42, 42, 42, 0.6);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chart-header h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #e10600, #ff6b00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chart-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-selector label {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.top-selector select {
+  padding: 0.5rem 1rem;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.top-selector select:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #e10600;
+}
+
+.top-selector select:focus {
+  outline: none;
+  border-color: #e10600;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.1);
+}
+
+.selection-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.select-btn {
+  padding: 0.5rem 1rem;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.select-btn:hover {
+  background: linear-gradient(135deg, #e10600, #ff6b00);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.item-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.item-selector::-webkit-scrollbar {
+  width: 8px;
+}
+
+.item-selector::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.item-selector::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.item-selector::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.item-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.item-chip.active {
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.item-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.item-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.chart-wrapper {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.chart-description {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 107, 0, 0.1);
+  border-left: 4px solid #ff6b00;
+  border-radius: 5px;
+}
+
+.chart-description p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.custom-tooltip {
+  background: rgba(42, 42, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.tooltip-label {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.custom-tooltip p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+.no-chart-data {
+  color: #808080;
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 1rem;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .chart-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .item-selector {
+    max-height: 150px;
+  }
+
+  .chart-wrapper {
+    padding: 0.5rem;
+  }
+
+  .custom-tooltip {
+    font-size: 0.8rem;
+  }
+}

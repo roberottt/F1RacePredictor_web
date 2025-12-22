@@ -40,14 +40,9 @@ const RaceSelector = ({ onSelectRace }) => {
           >
             2025
           </motion.button>
-          <motion.button
-            className={`year-btn ${selectedYear === 2026 ? 'active' : ''}`}
-            onClick={() => handleYearChange(2026)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            2026
-          </motion.button>
+          <div className="year-btn disabled">
+            {getTranslation(language, 'season2026Coming')}
+          </div>
         </div>
       </motion.div>
 

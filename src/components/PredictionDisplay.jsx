@@ -59,6 +59,80 @@ const PredictionDisplay = ({ year, round }) => {
     return teamColors[teamName] || '#e10600';
   };
 
+  const getCountryFlag = (nationality) => {
+    const flags = {
+      'Dutch': '🇳🇱',
+      'British': '🇬🇧',
+      'Spanish': '🇪🇸',
+      'Monegasque': '🇲🇨',
+      'Mexican': '🇲🇽',
+      'Australian': '🇦🇺',
+      'French': '🇫🇷',
+      'Canadian': '🇨🇦',
+      'German': '🇩🇪',
+      'Japanese': '🇯🇵',
+      'Danish': '🇩🇰',
+      'Finnish': '🇫🇮',
+      'Thai': '🇹🇭',
+      'Chinese': '🇨🇳',
+      'American': '🇺🇸',
+      'Italian': '🇮🇹'
+    };
+    return flags[nationality] || '🏁';
+  };
+
+  const getDriverNationality = (driverName) => {
+    const nationalities = {
+      'Max Verstappen': 'Dutch',
+      'Lando Norris': 'British',
+      'Oscar Piastri': 'Australian',
+      'Charles Leclerc': 'Monegasque',
+      'Carlos Sainz': 'Spanish',
+      'Lewis Hamilton': 'British',
+      'George Russell': 'British',
+      'Fernando Alonso': 'Spanish',
+      'Sergio Perez': 'Mexican',
+      'Pierre Gasly': 'French',
+      'Esteban Ocon': 'French',
+      'Alexander Albon': 'Thai',
+      'Yuki Tsunoda': 'Japanese',
+      'Lance Stroll': 'Canadian',
+      'Nico Hulkenberg': 'German',
+      'Kevin Magnussen': 'Danish',
+      'Valtteri Bottas': 'Finnish',
+      'Zhou Guanyu': 'Chinese',
+      'Logan Sargeant': 'American',
+      'Daniel Ricciardo': 'Australian'
+    };
+    return nationalities[driverName] || 'Unknown';
+  };
+
+  const getDriverCode = (driverName) => {
+    const codes = {
+      'Max Verstappen': 'VER',
+      'Lando Norris': 'NOR',
+      'Oscar Piastri': 'PIA',
+      'Charles Leclerc': 'LEC',
+      'Carlos Sainz': 'SAI',
+      'Lewis Hamilton': 'HAM',
+      'George Russell': 'RUS',
+      'Fernando Alonso': 'ALO',
+      'Sergio Perez': 'PER',
+      'Pierre Gasly': 'GAS',
+      'Esteban Ocon': 'OCO',
+      'Alexander Albon': 'ALB',
+      'Yuki Tsunoda': 'TSU',
+      'Lance Stroll': 'STR',
+      'Nico Hulkenberg': 'HUL',
+      'Kevin Magnussen': 'MAG',
+      'Valtteri Bottas': 'BOT',
+      'Zhou Guanyu': 'ZHO',
+      'Logan Sargeant': 'SAR',
+      'Daniel Ricciardo': 'RIC'
+    };
+    return codes[driverName] || '';
+  };
+
   const getPodiumIcon = (position) => {
     switch(position) {
       case 1: return '🥇';
@@ -136,48 +210,63 @@ const PredictionDisplay = ({ year, round }) => {
 
       <div className="predictions-container">
         <AnimatePresence>
-          {predictions.map((prediction, index) => (
-            <motion.div
-              key={`${prediction.driver}-${index}`}
-              className={`prediction-card ${index < 3 ? 'podium' : ''}`}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              whileHover={{ 
-                scale: 1.02, 
-                boxShadow: '0 10px 40px rgba(225, 6, 0, 0.4)',
-                transition: { duration: 0.2 }
-              }}
-              style={{
-                borderLeft: `5px solid ${getTeamColor(prediction.team)}`
-              }}
-            >
-              <div className="position-badge">
-                <span className="position-number">{index + 1}</span>
-                {index < 3 && <span className="podium-icon">{getPodiumIcon(index + 1)}</span>}
-              </div>
-              
-              <div className="driver-info">
-                <h3 className="driver-name">{prediction.driver || `Driver ${index + 1}`}</h3>
-                <p className="team-name">{prediction.team || 'Team'}</p>
-              </div>
+          {predictions.map((prediction, index) => {
+            const teamColor = getTeamColor(prediction.team);
+            const nationality = getDriverNationality(prediction.driver);
+            const driverCode = getDriverCode(prediction.driver);
+            
+            return (
+              <motion.div
+                key={`${prediction.driver}-${index}`}
+                className={`prediction-card ${index < 3 ? 'podium' : ''}`}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                whileHover={{ 
+                  scale: 1.02,
+                  x: 10,
+                  transition: { duration: 0.2 }
+                }}
+                style={{
+                  '--team-color': teamColor
+                }}
+              >
+                <div className="team-color-bar" style={{ background: teamColor }}></div>
+                
+                <div className="position-badge">
+                  <div className="position-circle">
+                    {index + 1}
+                    {index < 3 && <span className="podium-icon">{getPodiumIcon(index + 1)}</span>}
+                  </div>
+                </div>
 
-              <div className="prediction-stats">
-                {prediction.grid_position && (
-                  <div className="stat">
-                    <span className="stat-label">{getTranslation(language, 'grid')}</span>
-                    <span className="stat-value">P{prediction.grid_position}</span>
+                <div className="position-number-container">
+                  <div className="driver-info">
+                    <h3 className="driver-name">{prediction.driver || `Driver ${index + 1}`}</h3>
+                    <p className="driver-code">{driverCode}</p>
+                    <p className="team-name">{prediction.team || 'Team'}</p>
                   </div>
-                )}
-                {prediction.probability && (
-                  <div className="stat">
-                    <span className="stat-label">{getTranslation(language, 'probability')}</span>
-                    <span className="stat-value">{(prediction.probability * 100).toFixed(1)}%</span>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          ))}
+                </div>
+
+                <span className="flag-icon">{getCountryFlag(nationality)}</span>
+
+                <div className="prediction-stats">
+                  {prediction.grid_position && (
+                    <div className="stat grid">
+                      <span className="stat-label">{getTranslation(language, 'grid')}</span>
+                      <span className="stat-value">P{prediction.grid_position}</span>
+                    </div>
+                  )}
+                  {prediction.probability && (
+                    <div className="stat probability">
+                      <span className="stat-label">{getTranslation(language, 'probability')}</span>
+                      <span className="stat-value">{(prediction.probability * 100).toFixed(1)}%</span>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </div>
     </motion.div>

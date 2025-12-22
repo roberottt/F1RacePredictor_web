@@ -5,48 +5,76 @@
 }
 
 .year-selector {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: rgba(42, 42, 42, 0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(239, 0, 0, 0.3);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .year-selector h2 {
-  color: #e10600;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 0;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .year-buttons {
   display: flex;
   gap: 1rem;
-  justify-content: center;
 }
 
 .year-btn {
-  padding: 1rem 3rem;
-  font-size: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-  color: white;
-  border: 3px solid #333;
-  border-radius: 50px;
+  background: rgba(26, 26, 26, 0.8);
+  color: #e0e0e0;
+  border: 2px solid rgba(239, 0, 0, 0.3);
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  min-width: 100px;
 }
 
 .year-btn:hover {
   border-color: #e10600;
-  box-shadow: 0 0 20px rgba(225, 6, 0, 0.5);
+  background: rgba(239, 0, 0, 0.15);
+  color: #ffffff;
 }
 
 .year-btn.active {
-  background: linear-gradient(135deg, #e10600, #ff1e00);
+  background: linear-gradient(135deg, #e10600, #ff4444);
   border-color: #e10600;
-  box-shadow: 0 0 30px rgba(225, 6, 0, 0.7);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(225, 6, 0, 0.5);
+}
+
+.year-btn.disabled {
+  background: rgba(26, 26, 26, 0.4);
+  color: #666;
+  border-color: rgba(100, 100, 100, 0.3);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.year-btn.disabled:hover {
+  background: rgba(26, 26, 26, 0.4);
+  color: #666;
+  border-color: rgba(100, 100, 100, 0.3);
+  transform: none;
 }
 
 .races-grid h2 {
@@ -130,12 +158,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40px;
+  height: 35px;
+  min-height: 35px;
 }
 
 .race-flag img {
-  width: 60px;
-  height: auto;
+  width: 50px;
+  height: 35px;
+  object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
