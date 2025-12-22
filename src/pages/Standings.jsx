@@ -28,8 +28,8 @@ function Standings() {
     
     try {
       const [driversResponse, constructorsResponse] = await Promise.all([
-        axios.get(`http://localhost:8000/standings/drivers/${season}`),
-        axios.get(`http://localhost:8000/standings/constructors/${season}`)
+        axios.get(`https://f1racepredictor.onrender.com/standings/drivers/${season}`),
+        axios.get(`https://f1racepredictor.onrender.com/standings/constructors/${season}`)
       ]);
 
       // La API devuelve un objeto con un campo 'standings'

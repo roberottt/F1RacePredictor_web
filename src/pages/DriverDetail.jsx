@@ -296,7 +296,7 @@ const DriverDetail = () => {
     
     try {
       // Obtener datos de standings para estadísticas actuales
-      const response = await axios.get('http://localhost:8000/standings/drivers/2025');
+      const response = await axios.get('https://f1racepredictor.onrender.com/standings/drivers/2025');
       const standings = response.data?.standings || [];
       
       // Buscar el piloto por código
