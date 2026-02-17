@@ -9,6 +9,7 @@ export const translations = {
     navHome: "Home",
     navPredictions: "Predictions",
     navStandings: "Standings",
+    navWiki: "Wiki",
     
     // Footer
     footerText: "Powered by Machine Learning • Data from F1 API",
@@ -71,6 +72,39 @@ export const translations = {
     chartDescriptionDrivers: "This chart shows the evolution of accumulated points throughout the season for each driver.",
     chartDescriptionConstructors: "This chart shows the evolution of accumulated points throughout the season for each constructor.",
     
+    // Wiki
+    wikiTitle: "F1 Encyclopedia",
+    wikiSubtitle: "Complete information about teams and drivers",
+    constructorsTab: "Teams",
+    driversTab: "Drivers",
+    searchPlaceholder: "Search teams or drivers...",
+    selectConstructor: "Select a Team",
+    selectDriver: "Select a Driver",
+    wins2025Short: "2025",
+    wins2026Short: "2026",
+    titles: "Titles",
+    
+    // Constructor Detail
+    constructorNotFound: "Team not found",
+    backToWiki: "Back to Wiki",
+    chassis: "Chassis",
+    powerUnit: "Power Unit",
+    base: "Base",
+    teamChief: "Team Chief",
+    technicalDirector: "Technical Director",
+    firstEntry: "First Entry",
+    wins2025: "Wins 2025",
+    wins2026: "Wins 2026",
+    championships: "World Championships",
+    totalWins: "Total Wins",
+    totalPodiums: "Total Podiums",
+    polePositions: "Pole Positions",
+    teamInfo: "Team Information",
+    currentDrivers: "2026 Drivers",
+    viewProfile: "View Profile",
+    history: "History",
+    recentForm: "Recent Form",
+    
     // Language selector
     language: "Language"
   },
@@ -84,6 +118,7 @@ export const translations = {
     navHome: "Inicio",
     navPredictions: "Predicciones",
     navStandings: "Clasificación",
+    navWiki: "Wiki",
     
     // Footer
     footerText: "Impulsado por Aprendizaje Automático • Datos de API F1",
@@ -145,6 +180,39 @@ export const translations = {
     noChartData: "No hay datos disponibles para el gráfico",
     chartDescriptionDrivers: "Este gráfico muestra la evolución de los puntos acumulados a lo largo de la temporada para cada piloto.",
     chartDescriptionConstructors: "Este gráfico muestra la evolución de los puntos acumulados a lo largo de la temporada para cada constructor.",
+    
+    // Wiki
+    wikiTitle: "Enciclopedia F1",
+    wikiSubtitle: "Información completa sobre equipos y pilotos",
+    constructorsTab: "Equipos",
+    driversTab: "Pilotos",
+    searchPlaceholder: "Buscar equipos o pilotos...",
+    selectConstructor: "Selecciona un Equipo",
+    selectDriver: "Selecciona un Piloto",
+    wins2025Short: "2025",
+    wins2026Short: "2026",
+    titles: "Títulos",
+    
+    // Constructor Detail
+    constructorNotFound: "Equipo no encontrado",
+    backToWiki: "Volver a Wiki",
+    chassis: "Chasis",
+    powerUnit: "Unidad de Potencia",
+    base: "Base",
+    teamChief: "Jefe de Equipo",
+    technicalDirector: "Director Técnico",
+    firstEntry: "Primera Entrada",
+    wins2025: "Victorias 2025",
+    wins2026: "Victorias 2026",
+    championships: "Campeonatos Mundiales",
+    totalWins: "Victorias Totales",
+    totalPodiums: "Podios Totales",
+    polePositions: "Poles",
+    teamInfo: "Información del Equipo",
+    currentDrivers: "Pilotos 2026",
+    viewProfile: "Ver Perfil",
+    history: "Historia",
+    recentForm: "Forma Reciente",
     
     // Language selector
     language: "Idioma"

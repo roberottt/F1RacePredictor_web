@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Predictions from './pages/Predictions';
 import Standings from './pages/Standings';
 import DriverDetail from './pages/DriverDetail';
+import Wiki from './pages/Wiki';
+import ConstructorDetail from './pages/ConstructorDetail';
 import { getTranslation } from './translations';
 import './App.css';
 
@@ -61,7 +63,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/predictions" element={<Predictions />} />
             <Route path="/standings" element={<Standings />} />
+            <Route path="/wiki" element={<Wiki />} />
             <Route path="/driver/:driverCode" element={<DriverDetail />} />
+            <Route path="/constructor/:constructorId" element={<ConstructorDetail />} />
           </Routes>
 
           <motion.footer 

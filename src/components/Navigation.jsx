@@ -12,7 +12,8 @@ function Navigation() {
   const navItems = [
     { path: '/', labelKey: 'navHome' },
     { path: '/predictions', labelKey: 'navPredictions' },
-    { path: '/standings', labelKey: 'navStandings' }
+    { path: '/standings', labelKey: 'navStandings' },
+    { path: '/wiki', labelKey: 'navWiki' }
   ];
 
   return (
