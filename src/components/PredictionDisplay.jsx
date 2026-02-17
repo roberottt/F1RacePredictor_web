@@ -123,7 +123,8 @@ const PredictionDisplay = ({ year, round }) => {
       'Jack Doohan': 'Australian',
       'Franco Colapinto': 'Argentine',
       'Colton Herta': 'American',
-      'Ryo Hirakawa': 'Japanese'
+      'Ryo Hirakawa': 'Japanese',
+      'Arvid Lindblad': 'British'
     };
     return nationalities[driverName] || 'Unknown';
   };
@@ -138,7 +139,7 @@ const PredictionDisplay = ({ year, round }) => {
       'Lewis Hamilton': 'HAM',
       'George Russell': 'RUS',
       'Fernando Alonso': 'ALO',
-      'Sergio Perez': 'PER',
+      'Sergio Perez': 'MEX',
       'Pierre Gasly': 'GAS',
       'Esteban Ocon': 'OCO',
       'Alexander Albon': 'ALB',
@@ -158,7 +159,8 @@ const PredictionDisplay = ({ year, round }) => {
       'Jack Doohan': 'DOO',
       'Franco Colapinto': 'COL',
       'Colton Herta': 'HER',
-      'Ryo Hirakawa': 'HIR'
+      'Ryo Hirakawa': 'HIR',
+      'Arvid Lindblad': 'LIN'
     };
     return codes[driverName] || '';
   };

@@ -29,8 +29,9 @@ function StandingsChart({ driverStandings, constructorStandings, chartType = 'dr
       'Alpine': '#FF87BC',
       'Williams': '#64C4FF',
       'Racing Bulls': '#5E8FAA',
-      'Kick Sauber': '#C92D4B',
+      'Audi': '#000000',
       'Haas F1 Team': '#B6BABD',
+      'Cadillac F1 Team': '#D4AF37',
     };
     return colorMap[constructorName] || colors[Math.floor(Math.random() * colors.length)];
   };

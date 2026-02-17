@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
+import Predictions from './pages/Predictions';
 import Standings from './pages/Standings';
 import DriverDetail from './pages/DriverDetail';
 import { getTranslation } from './translations';
@@ -58,6 +59,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/predictions" element={<Predictions />} />
             <Route path="/standings" element={<Standings />} />
             <Route path="/driver/:driverCode" element={<DriverDetail />} />
           </Routes>

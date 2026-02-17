@@ -25,28 +25,28 @@ function Standings() {
   // Datos estáticos para 2026 basados en posiciones finales de 2025
   const getStandings2026 = () => {
     const driverStandings2026 = [
-      { position: 1, driver: 'Max Verstappen', driver_code: 'VER', team: 'Red Bull Racing', total_points: 0, wins: 0 },
-      { position: 2, driver: 'Lando Norris', driver_code: 'NOR', team: 'McLaren', total_points: 0, wins: 0 },
-      { position: 3, driver: 'Charles Leclerc', driver_code: 'LEC', team: 'Ferrari', total_points: 0, wins: 0 },
-      { position: 4, driver: 'Oscar Piastri', driver_code: 'PIA', team: 'McLaren', total_points: 0, wins: 0 },
-      { position: 5, driver: 'Carlos Sainz', driver_code: 'SAI', team: 'Williams', total_points: 0, wins: 0 },
-      { position: 6, driver: 'George Russell', driver_code: 'RUS', team: 'Mercedes', total_points: 0, wins: 0 },
-      { position: 7, driver: 'Lewis Hamilton', driver_code: 'HAM', team: 'Ferrari', total_points: 0, wins: 0 },
-      { position: 8, driver: 'Fernando Alonso', driver_code: 'ALO', team: 'Aston Martin', total_points: 0, wins: 0 },
-      { position: 9, driver: 'Pierre Gasly', driver_code: 'GAS', team: 'Alpine', total_points: 0, wins: 0 },
-      { position: 10, driver: 'Nico Hulkenberg', driver_code: 'HUL', team: 'Kick Sauber', total_points: 0, wins: 0 },
-      { position: 11, driver: 'Lance Stroll', driver_code: 'STR', team: 'Aston Martin', total_points: 0, wins: 0 },
-      { position: 12, driver: 'Yuki Tsunoda', driver_code: 'TSU', team: 'Red Bull Racing', total_points: 0, wins: 0 },
-      { position: 13, driver: 'Alexander Albon', driver_code: 'ALB', team: 'Williams', total_points: 0, wins: 0 },
-      { position: 14, driver: 'Esteban Ocon', driver_code: 'OCO', team: 'Haas F1 Team', total_points: 0, wins: 0 },
-      { position: 15, driver: 'Oliver Bearman', driver_code: 'BEA', team: 'Haas F1 Team', total_points: 0, wins: 0 },
-      { position: 16, driver: 'Andrea Kimi Antonelli', driver_code: 'ANT', team: 'Mercedes', total_points: 0, wins: 0 },
-      { position: 17, driver: 'Liam Lawson', driver_code: 'LAW', team: 'Racing Bulls', total_points: 0, wins: 0 },
-      { position: 18, driver: 'Isack Hadjar', driver_code: 'HAD', team: 'Racing Bulls', total_points: 0, wins: 0 },
-      { position: 19, driver: 'Jack Doohan', driver_code: 'DOO', team: 'Alpine', total_points: 0, wins: 0 },
-      { position: 20, driver: 'Gabriel Bortoleto', driver_code: 'BOR', team: 'Kick Sauber', total_points: 0, wins: 0 },
-      { position: 21, driver: 'Colton Herta', driver_code: 'HER', team: 'Cadillac F1 Team', total_points: 0, wins: 0 },
-      { position: 22, driver: 'Ryo Hirakawa', driver_code: 'HIR', team: 'Cadillac F1 Team', total_points: 0, wins: 0 },
+      { position: 1, driver: 'Lando Norris', driver_code: 'NOR', team: 'McLaren', total_points: 0, wins: 0 },
+      { position: 2, driver: 'Oscar Piastri', driver_code: 'PIA', team: 'McLaren', total_points: 0, wins: 0 },
+      { position: 3, driver: 'Andrea Kimi Antonelli', driver_code: 'ANT', team: 'Mercedes', total_points: 0, wins: 0 },
+      { position: 4, driver: 'George Russell', driver_code: 'RUS', team: 'Mercedes', total_points: 0, wins: 0 },
+      { position: 5, driver: 'Max Verstappen', driver_code: 'VER', team: 'Red Bull Racing', total_points: 0, wins: 0 },
+      { position: 6, driver: 'Isack Hadjar', driver_code: 'HAD', team: 'Red Bull Racing', total_points: 0, wins: 0 },
+      { position: 7, driver: 'Charles Leclerc', driver_code: 'LEC', team: 'Ferrari', total_points: 0, wins: 0 },
+      { position: 8, driver: 'Lewis Hamilton', driver_code: 'HAM', team: 'Ferrari', total_points: 0, wins: 0 },
+      { position: 9, driver: 'Alexander Albon', driver_code: 'ALB', team: 'Williams', total_points: 0, wins: 0 },
+      { position: 10, driver: 'Carlos Sainz', driver_code: 'SAI', team: 'Williams', total_points: 0, wins: 0 },
+      { position: 11, driver: 'Liam Lawson', driver_code: 'LAW', team: 'Racing Bulls', total_points: 0, wins: 0 },
+      { position: 12, driver: 'Arvid Lindblad', driver_code: 'LIN', team: 'Racing Bulls', total_points: 0, wins: 0 },
+      { position: 13, driver: 'Fernando Alonso', driver_code: 'ALO', team: 'Aston Martin', total_points: 0, wins: 0 },
+      { position: 14, driver: 'Lance Stroll', driver_code: 'STR', team: 'Aston Martin', total_points: 0, wins: 0 },
+      { position: 15, driver: 'Esteban Ocon', driver_code: 'OCO', team: 'Haas F1 Team', total_points: 0, wins: 0 },
+      { position: 16, driver: 'Oliver Bearman', driver_code: 'BEA', team: 'Haas F1 Team', total_points: 0, wins: 0 },
+      { position: 17, driver: 'Gabriel Bortoleto', driver_code: 'BOR', team: 'Audi', total_points: 0, wins: 0 },
+      { position: 18, driver: 'Nico Hulkenberg', driver_code: 'HUL', team: 'Audi', total_points: 0, wins: 0 },
+      { position: 19, driver: 'Pierre Gasly', driver_code: 'GAS', team: 'Alpine', total_points: 0, wins: 0 },
+      { position: 20, driver: 'Franco Colapinto', driver_code: 'COL', team: 'Alpine', total_points: 0, wins: 0 },
+      { position: 21, driver: 'Sergio Pérez', driver_code: 'MEX', team: 'Cadillac F1 Team', total_points: 0, wins: 0 },
+      { position: 22, driver: 'Valtteri Bottas', driver_code: 'BOT', team: 'Cadillac F1 Team', total_points: 0, wins: 0 },
     ];
 
     const constructorStandings2026 = [
@@ -59,7 +59,7 @@ function Standings() {
       { position: 7, constructor: 'Williams', total_points: 0, wins: 0, nationality: 'British' },
       { position: 8, constructor: 'Haas F1 Team', total_points: 0, wins: 0, nationality: 'American' },
       { position: 9, constructor: 'Racing Bulls', total_points: 0, wins: 0, nationality: 'Italian' },
-      { position: 10, constructor: 'Kick Sauber', total_points: 0, wins: 0, nationality: 'Swiss' },
+      { position: 10, constructor: 'Audi', total_points: 0, wins: 0, nationality: 'German' },
       { position: 11, constructor: 'Cadillac F1 Team', total_points: 0, wins: 0, nationality: 'American' },
     ];
 
@@ -147,16 +147,18 @@ function Standings() {
       'LAW': 'New Zealander',
       'OCO': 'French',
       'STR': 'Canadian',
-      'TSU': 'Japanese',
       'BOR': 'Brazilian',
       'GAS': 'French',
-      'DOO': 'Australian',
-      'HER': 'American',
-      'HIR': 'Japanese',
+      'COL': 'Argentine',
+      'LIN': 'British',
+      'MEX': 'Mexican',
+      'BOT': 'Finnish',
     };
 
     const map = season === '2026' ? nationalityMap2026 : nationalityMap2025;
-    return map[driverCode] || '';
+    // Normalizar el código de piloto a mayúsculas para la búsqueda
+    const normalizedCode = driverCode ? driverCode.toUpperCase() : '';
+    return map[normalizedCode] || '';
   };
 
   // Convertir nacionalidad a código ISO de país
@@ -210,7 +212,7 @@ function Standings() {
       'Alpine': 'ALP',
       'Williams': 'WIL',
       'Racing Bulls': 'RB',
-      'Kick Sauber': 'KS',
+      'Audi': 'AUD',
       'Haas F1 Team': 'HAS',
       'Cadillac F1 Team': 'CAD',
     };
@@ -231,6 +233,7 @@ function Standings() {
       'racing_bulls': '#5E8FAA',
       'alfa': '#C92D4B',
       'kick_sauber': '#C92D4B',
+      'audi': '#000000',
       'haas': '#B6BABD',
       'haas_f1_team': '#B6BABD',
       'racing_point': '#F596C8',
@@ -385,8 +388,8 @@ function Standings() {
                   // La API devuelve 'team' en vez de 'constructor'
                   const constructorName = standing.team || standing.constructor || '';
                   const driverCode = standing.driver_code || '';
-                  // Si la API no devuelve nacionalidad, usamos nuestro mapeo
-                  const nationality = standing.nationality || getDriverNationality(driverCode, driverName, season);
+                  // Siempre usar nuestro mapeo local para asegurar consistencia
+                  const nationality = getDriverNationality(driverCode, driverName, season) || standing.nationality || '';
                   const driverNumber = standing.driver_number || '';
                   const constructorId = constructorName ? constructorName.toLowerCase().replace(/ /g, '_') : '';
                   

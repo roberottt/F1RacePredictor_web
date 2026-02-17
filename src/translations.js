@@ -6,11 +6,27 @@ export const translations = {
     appSubtitle: "AI-Powered Race Outcome Predictions",
     
     // Navigation
-    navHome: "Predictions",
+    navHome: "Home",
+    navPredictions: "Predictions",
     navStandings: "Standings",
     
     // Footer
     footerText: "Powered by Machine Learning • Data from F1 API",
+    
+    // Home Page
+    welcomeTitle: "Welcome to The Paddock Prophet",
+    welcomeSubtitle: "Harness the power of artificial intelligence to predict Formula 1 race outcomes with unprecedented accuracy",
+    featureAITitle: "AI-Powered Predictions",
+    featureAIDescription: "Our advanced machine learning model analyzes historical data, driver performance, and track conditions to generate accurate race predictions.",
+    featurePredictionsTitle: "Race Predictions",
+    featurePredictionsDescription: "Get detailed predictions for every F1 race, including podium finishes and championship points distribution.",
+    featureStandingsTitle: "Live Standings",
+    featureStandingsDescription: "Track driver and constructor championship standings with interactive charts showing season evolution.",
+    howItWorksTitle: "How It Works",
+    step1: "Select a season and race from our comprehensive F1 calendar",
+    step2: "Our AI analyzes thousands of data points to generate predictions",
+    step3: "View predicted results with probability scores for each driver",
+    startPredicting: "Start Predicting",
     
     // Race Selector
     selectSeason: "Select Season",
@@ -65,11 +81,27 @@ export const translations = {
     appSubtitle: "Predicciones de Carreras con Inteligencia Artificial",
     
     // Navigation
-    navHome: "Predicciones",
+    navHome: "Inicio",
+    navPredictions: "Predicciones",
     navStandings: "Clasificación",
     
     // Footer
     footerText: "Impulsado por Aprendizaje Automático • Datos de API F1",
+    
+    // Home Page
+    welcomeTitle: "Bienvenido a The Paddock Prophet",
+    welcomeSubtitle: "Aprovecha el poder de la inteligencia artificial para predecir resultados de carreras de Fórmula 1 con precisión sin precedentes",
+    featureAITitle: "Predicciones con IA",
+    featureAIDescription: "Nuestro avanzado modelo de aprendizaje automático analiza datos históricos, rendimiento de pilotos y condiciones de pista para generar predicciones precisas.",
+    featurePredictionsTitle: "Predicciones de Carreras",
+    featurePredictionsDescription: "Obtén predicciones detalladas para cada carrera de F1, incluyendo podios y distribución de puntos del campeonato.",
+    featureStandingsTitle: "Clasificaciones en Vivo",
+    featureStandingsDescription: "Sigue las clasificaciones de pilotos y constructores con gráficos interactivos que muestran la evolución de la temporada.",
+    howItWorksTitle: "Cómo Funciona",
+    step1: "Selecciona una temporada y carrera de nuestro calendario completo de F1",
+    step2: "Nuestra IA analiza miles de datos para generar predicciones",
+    step3: "Visualiza los resultados predichos con puntuaciones de probabilidad para cada piloto",
+    startPredicting: "Comenzar a Predecir",
     
     // Race Selector
     selectSeason: "Selecciona Temporada",

@@ -22,7 +22,7 @@ const DriverDetail = () => {
       name: 'Max Verstappen', 
       nationality: 'Dutch', 
       birthDate: '1997-09-30',
-      number: 1,
+      number: 3,
       teams: {
         '2025': ['Toro Rosso (2015)', 'Red Bull Racing (2016-present)'],
         '2026': ['Toro Rosso (2015)', 'Red Bull Racing (2016-present)']
@@ -38,12 +38,12 @@ const DriverDetail = () => {
       name: 'Lando Norris', 
       nationality: 'British', 
       birthDate: '1999-11-13',
-      number: 4,
+      number: 1,
       teams: {
         '2025': ['McLaren (2019-present)'],
         '2026': ['McLaren (2019-present)']
       },
-      championships: 0,
+      championships: 1,
       images: [
         'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/norris.jpg',
@@ -183,8 +183,8 @@ const DriverDetail = () => {
       birthDate: '1987-08-19',
       number: 27,
       teams: {
-        '2025': ['Williams (2010)', 'Force India (2011-2012)', 'Sauber (2013)', 'Force India (2014-2016)', 'Renault (2017-2019)', 'Haas (2023-2024)', 'Kick Sauber (2025-present)'],
-        '2026': ['Williams (2010)', 'Force India (2011-2012)', 'Sauber (2013)', 'Force India (2014-2016)', 'Renault (2017-2019)', 'Haas (2023-2024)', 'Kick Sauber (2025-present)']
+        '2025': ['Williams (2010)', 'Force India (2011-2012)', 'Sauber (2013)', 'Force India (2014-2016)', 'Renault (2017-2019)', 'Haas (2023-2024)', 'Kick Sauber (2025)'],
+        '2026': ['Williams (2010)', 'Force India (2011-2012)', 'Sauber (2013)', 'Force India (2014-2016)', 'Renault (2017-2019)', 'Haas (2023-2024)', 'Kick Sauber (2025)', 'Audi (2026-present)']
       },
       championships: 0,
       images: [
@@ -199,8 +199,8 @@ const DriverDetail = () => {
       birthDate: '2004-09-28',
       number: 6,
       teams: {
-        '2025': ['Racing Bulls (2025-present)'],
-        '2026': ['Racing Bulls (2025-present)']
+        '2025': ['Racing Bulls (2025)'],
+        '2026': ['Racing Bulls (2025)', 'Red Bull Racing (2026-present)']
       },
       championships: 0,
       images: [
@@ -276,8 +276,8 @@ const DriverDetail = () => {
       birthDate: '2000-05-11',
       number: 22,
       teams: {
-        '2025': ['AlphaTauri (2021-2023)', 'Racing Bulls (2024)', 'Red Bull Racing (2025-present)'],
-        '2026': ['AlphaTauri (2021-2023)', 'Racing Bulls (2024)', 'Red Bull Racing (2025-present)']
+        '2025': ['AlphaTauri (2021-2023)', 'Racing Bulls (2024)', 'Red Bull Racing (2025)'],
+        '2026': null
       },
       championships: 0,
       images: [
@@ -292,8 +292,8 @@ const DriverDetail = () => {
       birthDate: '2004-10-14',
       number: 5,
       teams: {
-        '2025': ['Kick Sauber (2025-present)'],
-        '2026': ['Kick Sauber (2025-present)']
+        '2025': ['Kick Sauber (2025)'],
+        '2026': ['Kick Sauber (2025)', 'Audi (2026-present)']
       },
       championships: 0,
       images: [
@@ -323,8 +323,8 @@ const DriverDetail = () => {
       birthDate: '2003-01-20',
       number: 7,
       teams: {
-        '2025': ['Alpine (2025-present)'],
-        '2026': ['Alpine (2025-present)']
+        '2025': ['Alpine (2025)'],
+        '2026': null
       },
       championships: 0,
       images: [
@@ -339,7 +339,7 @@ const DriverDetail = () => {
       number: 43,
       teams: {
         '2025': ['Alpine (2025)'],
-        '2026': null
+        '2026': ['Alpine (2025-present)']
       },
       championships: 0,
       images: [
@@ -354,7 +354,7 @@ const DriverDetail = () => {
       number: 26,
       teams: {
         '2025': null,
-        '2026': ['Cadillac F1 Team (2026-present)']
+        '2026': null
       },
       championships: 0,
       images: [
@@ -369,12 +369,57 @@ const DriverDetail = () => {
       number: 99,
       teams: {
         '2025': null,
-        '2026': ['Cadillac F1 Team (2026-present)']
+        '2026': null
       },
       championships: 0,
       images: [
         'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/R/RYOHIR01_Ryo_Hirakawa/ryohir01.png',
         'https://placehold.co/400x500/D4AF37/000000?text=RYO+HIRAKAWA+99'
+      ]
+    },
+    'LIN': {
+      name: 'Arvid Lindblad',
+      nationality: 'British',
+      birthDate: '2005-08-17',
+      number: 41,
+      teams: {
+        '2025': null,
+        '2026': ['Racing Bulls (2026-present)']
+      },
+      championships: 0,
+      images: [
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png',
+        'https://placehold.co/400x500/2B4562/white?text=ARVID+LINDBLAD+41'
+      ]
+    },
+    'MEX': {
+      name: 'Sergio Pérez',
+      nationality: 'Mexican',
+      birthDate: '1990-01-26',
+      number: 11,
+      teams: {
+        '2025': null,
+        '2026': ['Cadillac F1 Team (2026-present)']
+      },
+      championships: 0,
+      images: [
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png',
+        'https://placehold.co/400x500/D4AF37/000000?text=SERGIO+PEREZ+11'
+      ]
+    },
+    'BOT': {
+      name: 'Valtteri Bottas',
+      nationality: 'Finnish',
+      birthDate: '1989-08-28',
+      number: 77,
+      teams: {
+        '2025': null,
+        '2026': ['Cadillac F1 Team (2026-present)']
+      },
+      championships: 0,
+      images: [
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png',
+        'https://placehold.co/400x500/D4AF37/000000?text=VALTTERI+BOTTAS+77'
       ]
     },
   };
@@ -403,11 +448,11 @@ const DriverDetail = () => {
 
         // Mapeo de posiciones finales 2025 para 2026
         const positions2026 = {
-          'VER': 1, 'NOR': 2, 'LEC': 3, 'PIA': 4, 'SAI': 5,
-          'RUS': 6, 'HAM': 7, 'ALO': 8, 'GAS': 9, 'HUL': 10,
-          'STR': 11, 'TSU': 12, 'ALB': 13, 'OCO': 14, 'BEA': 15,
-          'ANT': 16, 'LAW': 17, 'HAD': 18, 'DOO': 19, 'BOR': 20,
-          'HER': 21, 'HIR': 22
+          'NOR': 1, 'PIA': 2, 'ANT': 3, 'RUS': 4, 'VER': 5,
+          'HAD': 6, 'LEC': 7, 'HAM': 8, 'ALB': 9, 'SAI': 10,
+          'LAW': 11, 'LIN': 12, 'ALO': 13, 'STR': 14, 'OCO': 15,
+          'BEA': 16, 'BOR': 17, 'HUL': 18, 'GAS': 19, 'COL': 20,
+          'MEX': 21, 'BOT': 22
         };
 
         // Obtener el equipo actual del piloto para 2026
@@ -510,7 +555,7 @@ const DriverDetail = () => {
       'Mexican': '🇲🇽', 'Australian': '🇦🇺', 'French': '🇫🇷', 'Canadian': '🇨🇦',
       'German': '🇩🇪', 'Japanese': '🇯🇵', 'Danish': '🇩🇰', 'Finnish': '🇫🇮',
       'Chinese': '🇨🇳', 'Thai': '🇹🇭', 'Italian': '🇮🇹', 'New Zealander': '🇳🇿',
-      'Brazilian': '🇧🇷', 'Argentine': '🇦🇷',
+      'Brazilian': '🇧🇷', 'Argentine': '🇦🇷', 'American': '🇺🇸',
     };
     return flags[nationality] || '🏁';
   };
