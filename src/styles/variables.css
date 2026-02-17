@@ -1,0 +1,121 @@
+:root {
+  /* Colores Pastel F1 */
+  --color-primary: #ffadad;          /* Rojo pastel - primario F1 */
+  --color-secondary: #b5d6fc;        /* Azul pastel - equipos */
+  --color-accent: #ffd4a3;           /* Naranja pastel - McLaren/Ferrari */
+  --color-success: #c7f5e8;          /* Verde menta - Aston Martin */
+  --color-info: #e0e7ff;             /* Lavanda pastel */
+  
+  /* Fondos */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f1f3f5;
+  --bg-card: #ffffff;
+  --bg-hover: #f8f9fa;
+  
+  /* Textos */
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-tertiary: #95a5a6;
+  --text-inverse: #ffffff;
+  
+  /* Bordes */
+  --border-color: #e3e8eb;
+  --border-color-hover: #d1d8dd;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 9999px;
+  
+  /* Sombras */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
+  
+  /* Espaciado */
+  --spacing-xs: 0.375rem;   /* 6px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 0.75rem;    /* 12px */
+  --spacing-lg: 1rem;       /* 16px */
+  --spacing-xl: 1.5rem;     /* 24px */
+  --spacing-2xl: 2rem;      /* 32px */
+  --spacing-3xl: 3rem;      /* 48px */
+  
+  /* Tipografía */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  
+  /* Transiciones */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  
+  /* Layout */
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 60px;
+  --header-height: 60px;
+  --bottom-nav-height: 64px;
+  --content-max-width: 1400px;
+  
+  /* Z-index */
+  --z-index-base: 1;
+  --z-index-dropdown: 100;
+  --z-index-sticky: 200;
+  --z-index-fixed: 300;
+  --z-index-modal: 400;
+  --z-index-popover: 500;
+  --z-index-tooltip: 600;
+  
+  /* Colores de equipos (versión pastel) */
+  --team-red-bull: #9db4ff;
+  --team-mclaren: #ffcb9a;
+  --team-ferrari: #ffadad;
+  --team-mercedes: #a3f3e8;
+  --team-aston-martin: #b8ddc4;
+  --team-alpine: #b5c9ff;
+  --team-williams: #a3c9f8;
+  --team-rb: #c9d6ff;
+  --team-haas: #f8e4e4;
+  --team-sauber: #bff5c8;
+  --team-stake: #bff5c8;
+}
+
+/* Dark mode variables (opcional para futuro) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #242424;
+    --bg-tertiary: #2e2e2e;
+    --bg-card: #242424;
+    --bg-hover: #2e2e2e;
+    
+    --text-primary: #f0f0f0;
+    --text-secondary: #b4b4b4;
+    --text-tertiary: #808080;
+    
+    --border-color: #3a3a3a;
+    --border-color-hover: #4a4a4a;
+  }
+}

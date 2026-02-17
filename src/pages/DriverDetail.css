@@ -1,69 +1,66 @@
 .driver-detail-container {
-  max-width: 1400px;
-  margin: 2rem auto;
-  padding: 2rem;
-  min-height: 70vh;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
 }
 
 .back-button {
-  background: rgba(42, 42, 42, 0.8);
-  border: 2px solid rgba(239, 0, 0, 0.3);
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
+  margin-bottom: var(--spacing-xl);
+  transition: all var(--transition-fast);
 }
 
 .back-button:hover {
-  background: rgba(239, 0, 0, 0.15);
-  border-color: #ef0000;
+  background-color: var(--bg-hover);
+  border-color: var(--border-color-hover);
 }
 
 .season-selector-driver {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
   justify-content: center;
 }
 
 .season-btn-driver {
-  background: rgba(42, 42, 42, 0.6);
-  border: 2px solid rgba(239, 0, 0, 0.3);
-  color: #fff;
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 700;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 100px;
+  transition: all var(--transition-fast);
+  min-width: 80px;
 }
 
 .season-btn-driver:hover {
-  background: rgba(239, 0, 0, 0.1);
-  border-color: #ef0000;
-  transform: translateY(-2px);
+  background-color: var(--bg-hover);
+  border-color: var(--border-color-hover);
 }
 
 .season-btn-driver.active {
-  background: linear-gradient(135deg, #ef0000, #ff4444);
-  border-color: #ef0000;
-  box-shadow: 0 4px 15px rgba(239, 0, 0, 0.4);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--text-inverse);
 }
 
 .driver-header {
   display: flex;
-  gap: 3rem;
-  background: rgba(42, 42, 42, 0.6);
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border: 1px solid rgba(239, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  gap: var(--spacing-2xl);
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
 }
 
 .driver-photo-container {
@@ -72,11 +69,11 @@
 }
 
 .driver-photo {
-  width: 300px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .driver-number-badge {
