@@ -16,6 +16,7 @@ const teamColors = {
   'Racing Bulls': '#2B4562',
   'Kick Sauber': '#00E701',
   'Haas F1 Team': '#FFFFFF',
+  'Cadillac F1 Team': '#D4AF37',
 };
 
 const PredictionDisplay = ({ year, round }) => {
@@ -31,6 +32,14 @@ const PredictionDisplay = ({ year, round }) => {
   }, [year, round]);
 
   const fetchPredictions = async () => {
+    // Si es 2026, no hacer llamada a la API
+    if (year === 2026 || year === '2026') {
+      setLoading(false);
+      setError(null);
+      setPredictions([]);
+      return;
+    }
+
     setLoading(true);
     setError(null);
     
@@ -76,7 +85,10 @@ const PredictionDisplay = ({ year, round }) => {
       'Thai': '🇹🇭',
       'Chinese': '🇨🇳',
       'American': '🇺🇸',
-      'Italian': '🇮🇹'
+      'Italian': '🇮🇹',
+      'Brazilian': '🇧🇷',
+      'New Zealander': '🇳🇿',
+      'Argentine': '🇦🇷'
     };
     return flags[nationality] || '🏁';
   };
@@ -102,7 +114,16 @@ const PredictionDisplay = ({ year, round }) => {
       'Valtteri Bottas': 'Finnish',
       'Zhou Guanyu': 'Chinese',
       'Logan Sargeant': 'American',
-      'Daniel Ricciardo': 'Australian'
+      'Daniel Ricciardo': 'Australian',
+      'Andrea Kimi Antonelli': 'Italian',
+      'Isack Hadjar': 'French',
+      'Oliver Bearman': 'British',
+      'Liam Lawson': 'New Zealander',
+      'Gabriel Bortoleto': 'Brazilian',
+      'Jack Doohan': 'Australian',
+      'Franco Colapinto': 'Argentine',
+      'Colton Herta': 'American',
+      'Ryo Hirakawa': 'Japanese'
     };
     return nationalities[driverName] || 'Unknown';
   };
@@ -128,7 +149,16 @@ const PredictionDisplay = ({ year, round }) => {
       'Valtteri Bottas': 'BOT',
       'Zhou Guanyu': 'ZHO',
       'Logan Sargeant': 'SAR',
-      'Daniel Ricciardo': 'RIC'
+      'Daniel Ricciardo': 'RIC',
+      'Andrea Kimi Antonelli': 'ANT',
+      'Isack Hadjar': 'HAD',
+      'Oliver Bearman': 'BEA',
+      'Liam Lawson': 'LAW',
+      'Gabriel Bortoleto': 'BOR',
+      'Jack Doohan': 'DOO',
+      'Franco Colapinto': 'COL',
+      'Colton Herta': 'HER',
+      'Ryo Hirakawa': 'HIR'
     };
     return codes[driverName] || '';
   };
@@ -183,6 +213,48 @@ const PredictionDisplay = ({ year, round }) => {
           >
             {getTranslation(language, 'retry')}
           </motion.button>
+        </div>
+      </motion.div>
+    );
+  }
+
+  // Mensaje especial para 2026
+  if (year === 2026 || year === '2026') {
+    return (
+      <motion.div 
+        className="prediction-display"
+        id="prediction-results"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="coming-soon-container">
+          <motion.div
+            className="coming-soon-icon"
+            animate={{ 
+              scale: [1, 1.1, 1],
+              rotate: [0, 5, -5, 0]
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            🏁
+          </motion.div>
+          <h2 className="coming-soon-title">
+            {language === 'es' ? 'Predicciones 2026 Próximamente' : 'Season 2026 Predictions Coming Soon'}
+          </h2>
+          <p className="coming-soon-text">
+            {language === 'es' 
+              ? 'Las predicciones para la temporada 2026 estarán disponibles cuando comience el campeonato. ¡Vuelve pronto!' 
+              : 'Predictions for the 2026 season will be available when the championship begins. Come back soon!'}
+          </p>
+          <motion.div 
+            className="coming-soon-badge"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            🏎️ {language === 'es' ? 'Temporada 2026' : 'Season 2026'} 🏎️
+          </motion.div>
         </div>
       </motion.div>
     );

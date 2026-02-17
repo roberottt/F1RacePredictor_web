@@ -23,6 +23,38 @@
   border-color: #ef0000;
 }
 
+.season-selector-driver {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.season-btn-driver {
+  background: rgba(42, 42, 42, 0.6);
+  border: 2px solid rgba(239, 0, 0, 0.3);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.season-btn-driver:hover {
+  background: rgba(239, 0, 0, 0.1);
+  border-color: #ef0000;
+  transform: translateY(-2px);
+}
+
+.season-btn-driver.active {
+  background: linear-gradient(135deg, #ef0000, #ff4444);
+  border-color: #ef0000;
+  box-shadow: 0 4px 15px rgba(239, 0, 0, 0.4);
+}
+
 .driver-header {
   display: flex;
   gap: 3rem;

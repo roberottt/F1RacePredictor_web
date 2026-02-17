@@ -13,6 +13,7 @@ const DriverDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [imageAttempt, setImageAttempt] = useState(0);
+  const [selectedSeason, setSelectedSeason] = useState('2025');
   const { language } = useContext(LanguageContext);
 
   // Mapeo de información de pilotos con múltiples fuentes de imágenes
@@ -22,10 +23,13 @@ const DriverDetail = () => {
       nationality: 'Dutch', 
       birthDate: '1997-09-30',
       number: 1,
-      teams: ['Toro Rosso (2015)', 'Red Bull Racing (2016-present)'],
+      teams: {
+        '2025': ['Toro Rosso (2015)', 'Red Bull Racing (2016-present)'],
+        '2026': ['Toro Rosso (2015)', 'Red Bull Racing (2016-present)']
+      },
       championships: 4,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/verstappen.jpg',
         'https://placehold.co/400x500/0600EF/white?text=MAX+VERSTAPPEN+1'
       ]
@@ -35,10 +39,13 @@ const DriverDetail = () => {
       nationality: 'British', 
       birthDate: '1999-11-13',
       number: 4,
-      teams: ['McLaren (2019-present)'],
+      teams: {
+        '2025': ['McLaren (2019-present)'],
+        '2026': ['McLaren (2019-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/norris.jpg',
         'https://placehold.co/400x500/FF8700/white?text=LANDO+NORRIS+4'
       ]
@@ -48,10 +55,13 @@ const DriverDetail = () => {
       nationality: 'Australian', 
       birthDate: '2001-04-06',
       number: 81,
-      teams: ['McLaren (2023-present)'],
+      teams: {
+        '2025': ['McLaren (2023-present)'],
+        '2026': ['McLaren (2023-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/piastri.jpg',
         'https://placehold.co/400x500/FF8700/white?text=OSCAR+PIASTRI+81'
       ]
@@ -61,10 +71,13 @@ const DriverDetail = () => {
       nationality: 'British', 
       birthDate: '1998-02-15',
       number: 63,
-      teams: ['Williams (2019-2021)', 'Mercedes (2022-present)'],
+      teams: {
+        '2025': ['Williams (2019-2021)', 'Mercedes (2022-present)'],
+        '2026': ['Williams (2019-2021)', 'Mercedes (2022-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/russell.jpg',
         'https://placehold.co/400x500/00D2BE/000000?text=GEORGE+RUSSELL+63'
       ]
@@ -74,10 +87,13 @@ const DriverDetail = () => {
       nationality: 'Monegasque', 
       birthDate: '1997-10-16',
       number: 16,
-      teams: ['Sauber (2018)', 'Ferrari (2019-present)'],
+      teams: {
+        '2025': ['Sauber (2018)', 'Ferrari (2019-present)'],
+        '2026': ['Sauber (2018)', 'Ferrari (2019-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/leclerc.jpg',
         'https://placehold.co/400x500/DC0000/white?text=CHARLES+LECLERC+16'
       ]
@@ -87,10 +103,13 @@ const DriverDetail = () => {
       nationality: 'British', 
       birthDate: '1985-01-07',
       number: 44,
-      teams: ['McLaren (2007-2012)', 'Mercedes (2013-2024)', 'Ferrari (2025-present)'],
+      teams: {
+        '2025': ['McLaren (2007-2012)', 'Mercedes (2013-2024)', 'Ferrari (2025-present)'],
+        '2026': ['McLaren (2007-2012)', 'Mercedes (2013-2024)', 'Ferrari (2025-present)']
+      },
       championships: 7,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/hamilton.jpg',
         'https://placehold.co/400x500/DC0000/white?text=LEWIS+HAMILTON+44'
       ]
@@ -100,10 +119,13 @@ const DriverDetail = () => {
       nationality: 'Spanish', 
       birthDate: '1994-09-01',
       number: 55,
-      teams: ['Toro Rosso (2015)', 'Renault (2017-2018)', 'McLaren (2019-2020)', 'Ferrari (2021-2024)', 'Williams (2025-present)'],
+      teams: {
+        '2025': ['Toro Rosso (2015)', 'Renault (2017-2018)', 'McLaren (2019-2020)', 'Ferrari (2021-2024)', 'Williams (2025-present)'],
+        '2026': ['Toro Rosso (2015)', 'Renault (2017-2018)', 'McLaren (2019-2020)', 'Ferrari (2021-2024)', 'Williams (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/sainz.jpg',
         'https://placehold.co/400x500/005AFF/white?text=CARLOS+SAINZ+55'
       ]
@@ -113,10 +135,13 @@ const DriverDetail = () => {
       nationality: 'Spanish', 
       birthDate: '1981-07-29',
       number: 14,
-      teams: ['Minardi (2001)', 'Renault (2003-2006, 2008-2009)', 'McLaren (2007, 2015-2018)', 'Ferrari (2010-2014)', 'Alpine (2021-2022)', 'Aston Martin (2023-present)'],
+      teams: {
+        '2025': ['Minardi (2001)', 'Renault (2003-2006, 2008-2009)', 'McLaren (2007, 2015-2018)', 'Ferrari (2010-2014)', 'Alpine (2021-2022)', 'Aston Martin (2023-present)'],
+        '2026': ['Minardi (2001)', 'Renault (2003-2006, 2008-2009)', 'McLaren (2007, 2015-2018)', 'Ferrari (2010-2014)', 'Alpine (2021-2022)', 'Aston Martin (2023-present)']
+      },
       championships: 2,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/alonso.jpg',
         'https://placehold.co/400x500/006F62/white?text=FERNANDO+ALONSO+14'
       ]
@@ -126,10 +151,13 @@ const DriverDetail = () => {
       nationality: 'Italian',
       birthDate: '2006-08-25',
       number: 12,
-      teams: ['Mercedes (2025-present)'],
+      teams: {
+        '2025': ['Mercedes (2025-present)'],
+        '2026': ['Mercedes (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/A/ANDANT01_Andrea_Antonelli/andant01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/A/ANDANT01_Andrea_Antonelli/andant01.png',
         'https://placehold.co/400x500/00D2BE/000000?text=KIMI+ANTONELLI+12'
       ]
     },
@@ -138,10 +166,13 @@ const DriverDetail = () => {
       nationality: 'Thai',
       birthDate: '1996-03-23',
       number: 23,
-      teams: ['Toro Rosso (2019)', 'Red Bull (2019-2020)', 'Williams (2022-present)'],
+      teams: {
+        '2025': ['Toro Rosso (2019)', 'Red Bull (2019-2020)', 'Williams (2022-present)'],
+        '2026': ['Toro Rosso (2019)', 'Red Bull (2019-2020)', 'Williams (2022-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/albon.jpg',
         'https://placehold.co/400x500/005AFF/white?text=ALEX+ALBON+23'
       ]
@@ -151,10 +182,13 @@ const DriverDetail = () => {
       nationality: 'German',
       birthDate: '1987-08-19',
       number: 27,
-      teams: ['Williams (2010)', 'Force India (2011-2012)', 'Sauber (2013)', 'Force India (2014-2016)', 'Renault (2017-2019)', 'Haas (2023-2024)', 'Kick Sauber (2025-present)'],
+      teams: {
+        '2025': ['Williams (2010)', 'Force India (2011-2012)', 'Sauber (2013)', 'Force India (2014-2016)', 'Renault (2017-2019)', 'Haas (2023-2024)', 'Kick Sauber (2025-present)'],
+        '2026': ['Williams (2010)', 'Force India (2011-2012)', 'Sauber (2013)', 'Force India (2014-2016)', 'Renault (2017-2019)', 'Haas (2023-2024)', 'Kick Sauber (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/hulkenberg.jpg',
         'https://placehold.co/400x500/00E701/000000?text=NICO+HULKENBERG+27'
       ]
@@ -164,10 +198,13 @@ const DriverDetail = () => {
       nationality: 'French',
       birthDate: '2004-09-28',
       number: 6,
-      teams: ['Racing Bulls (2025-present)'],
+      teams: {
+        '2025': ['Racing Bulls (2025-present)'],
+        '2026': ['Racing Bulls (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png',
         'https://placehold.co/400x500/2B4562/white?text=ISACK+HADJAR+6'
       ]
     },
@@ -176,10 +213,13 @@ const DriverDetail = () => {
       nationality: 'British',
       birthDate: '2005-05-08',
       number: 87,
-      teams: ['Haas F1 Team (2025-present)'],
+      teams: {
+        '2025': ['Haas F1 Team (2025-present)'],
+        '2026': ['Haas F1 Team (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png',
         'https://placehold.co/400x500/B6BABD/000000?text=OLIVER+BEARMAN+87'
       ]
     },
@@ -188,10 +228,13 @@ const DriverDetail = () => {
       nationality: 'New Zealander',
       birthDate: '2002-02-11',
       number: 30,
-      teams: ['Racing Bulls (2025-present)'],
+      teams: {
+        '2025': ['Racing Bulls (2025-present)'],
+        '2026': ['Racing Bulls (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png',
         'https://placehold.co/400x500/2B4562/white?text=LIAM+LAWSON+30'
       ]
     },
@@ -200,10 +243,13 @@ const DriverDetail = () => {
       nationality: 'French',
       birthDate: '1996-09-17',
       number: 31,
-      teams: ['Manor (2016)', 'Force India (2017-2018)', 'Renault/Alpine (2020-2024)', 'Haas (2025-present)'],
+      teams: {
+        '2025': ['Manor (2016)', 'Force India (2017-2018)', 'Renault/Alpine (2020-2024)', 'Haas (2025-present)'],
+        '2026': ['Manor (2016)', 'Force India (2017-2018)', 'Renault/Alpine (2020-2024)', 'Haas (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/ocon.jpg',
         'https://placehold.co/400x500/B6BABD/000000?text=ESTEBAN+OCON+31'
       ]
@@ -213,10 +259,13 @@ const DriverDetail = () => {
       nationality: 'Canadian',
       birthDate: '1998-10-29',
       number: 18,
-      teams: ['Williams (2017-2018)', 'Racing Point (2019-2020)', 'Aston Martin (2021-present)'],
+      teams: {
+        '2025': ['Williams (2017-2018)', 'Racing Point (2019-2020)', 'Aston Martin (2021-present)'],
+        '2026': ['Williams (2017-2018)', 'Racing Point (2019-2020)', 'Aston Martin (2021-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/stroll.jpg',
         'https://placehold.co/400x500/006F62/white?text=LANCE+STROLL+18'
       ]
@@ -226,10 +275,13 @@ const DriverDetail = () => {
       nationality: 'Japanese',
       birthDate: '2000-05-11',
       number: 22,
-      teams: ['AlphaTauri (2021-2023)', 'Racing Bulls (2024)', 'Red Bull Racing (2025-present)'],
+      teams: {
+        '2025': ['AlphaTauri (2021-2023)', 'Racing Bulls (2024)', 'Red Bull Racing (2025-present)'],
+        '2026': ['AlphaTauri (2021-2023)', 'Racing Bulls (2024)', 'Red Bull Racing (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/Y/YUKTSU01_Yuki_Tsunoda/yuktsu01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/Y/YUKTSU01_Yuki_Tsunoda/yuktsu01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/tsunoda.jpg',
         'https://placehold.co/400x500/0600EF/white?text=YUKI+TSUNODA+22'
       ]
@@ -239,10 +291,13 @@ const DriverDetail = () => {
       nationality: 'Brazilian',
       birthDate: '2004-10-14',
       number: 5,
-      teams: ['Kick Sauber (2025-present)'],
+      teams: {
+        '2025': ['Kick Sauber (2025-present)'],
+        '2026': ['Kick Sauber (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png',
         'https://placehold.co/400x500/00E701/000000?text=GABRIEL+BORTOLETO+5'
       ]
     },
@@ -251,10 +306,13 @@ const DriverDetail = () => {
       nationality: 'French',
       birthDate: '1996-02-07',
       number: 10,
-      teams: ['Toro Rosso (2017-2018)', 'Red Bull (2019)', 'Toro Rosso/AlphaTauri (2019-2022)', 'Alpine (2023-present)'],
+      teams: {
+        '2025': ['Toro Rosso (2017-2018)', 'Red Bull (2019)', 'Toro Rosso/AlphaTauri (2019-2022)', 'Alpine (2023-present)'],
+        '2026': ['Toro Rosso (2017-2018)', 'Red Bull (2019)', 'Toro Rosso/AlphaTauri (2019-2022)', 'Alpine (2023-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png',
         'https://www.formula1.com/content/dam/fom-website/drivers/2024Drivers/gasly.jpg',
         'https://placehold.co/400x500/0090FF/white?text=PIERRE+GASLY+10'
       ]
@@ -264,10 +322,13 @@ const DriverDetail = () => {
       nationality: 'Australian',
       birthDate: '2003-01-20',
       number: 7,
-      teams: ['Alpine (2025-present)'],
+      teams: {
+        '2025': ['Alpine (2025-present)'],
+        '2026': ['Alpine (2025-present)']
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/J/JACDOO01_Jack_Doohan/jacdoo01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/J/JACDOO01_Jack_Doohan/jacdoo01.png',
         'https://placehold.co/400x500/0090FF/white?text=JACK+DOOHAN+7'
       ]
     },
@@ -276,18 +337,51 @@ const DriverDetail = () => {
       nationality: 'Argentine',
       birthDate: '2003-05-27',
       number: 43,
-      teams: ['Alpine (2025-present)'],
+      teams: {
+        '2025': ['Alpine (2025)'],
+        '2026': null
+      },
       championships: 0,
       images: [
-        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01',
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png',
         'https://placehold.co/400x500/0090FF/white?text=FRANCO+COLAPINTO+43'
+      ]
+    },
+    'HER': {
+      name: 'Colton Herta',
+      nationality: 'American',
+      birthDate: '2000-03-30',
+      number: 26,
+      teams: {
+        '2025': null,
+        '2026': ['Cadillac F1 Team (2026-present)']
+      },
+      championships: 0,
+      images: [
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/C/COLHER01_Colton_Herta/colher01.png',
+        'https://placehold.co/400x500/D4AF37/000000?text=COLTON+HERTA+26'
+      ]
+    },
+    'HIR': {
+      name: 'Ryo Hirakawa',
+      nationality: 'Japanese',
+      birthDate: '1994-07-08',
+      number: 99,
+      teams: {
+        '2025': null,
+        '2026': ['Cadillac F1 Team (2026-present)']
+      },
+      championships: 0,
+      images: [
+        'https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/R/RYOHIR01_Ryo_Hirakawa/ryohir01.png',
+        'https://placehold.co/400x500/D4AF37/000000?text=RYO+HIRAKAWA+99'
       ]
     },
   };
 
   useEffect(() => {
     fetchDriverData();
-  }, [driverCode]);
+  }, [driverCode, selectedSeason]);
 
   const fetchDriverData = async () => {
     setLoading(true);
@@ -295,8 +389,64 @@ const DriverDetail = () => {
     setImageAttempt(0);
     
     try {
-      // Obtener datos de standings para estadísticas actuales
-      const response = await axios.get('https://f1racepredictor.onrender.com/standings/drivers/2025');
+      // Si es 2026, usar datos estáticos sin puntos
+      if (selectedSeason === '2026') {
+        const additionalInfo = driversInfo[driverCode] || {};
+        const teamsForSeason = additionalInfo.teams?.['2026'];
+        
+        // Si el piloto no está en 2026
+        if (teamsForSeason === null) {
+          setError('Driver not racing in this season');
+          setLoading(false);
+          return;
+        }
+
+        // Mapeo de posiciones finales 2025 para 2026
+        const positions2026 = {
+          'VER': 1, 'NOR': 2, 'LEC': 3, 'PIA': 4, 'SAI': 5,
+          'RUS': 6, 'HAM': 7, 'ALO': 8, 'GAS': 9, 'HUL': 10,
+          'STR': 11, 'TSU': 12, 'ALB': 13, 'OCO': 14, 'BEA': 15,
+          'ANT': 16, 'LAW': 17, 'HAD': 18, 'DOO': 19, 'BOR': 20,
+          'HER': 21, 'HIR': 22
+        };
+
+        // Obtener el equipo actual del piloto para 2026
+        let currentTeam = 'Unknown Team';
+        if (teamsForSeason && teamsForSeason.length > 0) {
+          const lastTeam = teamsForSeason[teamsForSeason.length - 1];
+          const teamMatch = lastTeam.match(/^([^(]+)/);
+          currentTeam = teamMatch ? teamMatch[1].trim() : lastTeam;
+        }
+
+        // Datos estáticos para 2026 (sin puntos ni victorias)
+        const staticDriverData2026 = {
+          driver: additionalInfo.name || 'Unknown Driver',
+          driver_code: driverCode,
+          team: currentTeam,
+          position: positions2026[driverCode] || 21,
+          total_points: 0,
+          wins: 0,
+          race_history: []
+        };
+
+        setDriverData({
+          ...staticDriverData2026,
+          ...additionalInfo,
+          name: additionalInfo.name || staticDriverData2026.driver,
+          nationality: additionalInfo.nationality || 'Unknown',
+          birthDate: additionalInfo.birthDate || '2000-01-01',
+          number: additionalInfo.number || '?',
+          teams: teamsForSeason,
+          championships: additionalInfo.championships || 0,
+          images: additionalInfo.images || ['https://placehold.co/400x500/333333/white?text=DRIVER+PHOTO']
+        });
+        
+        setLoading(false);
+        return;
+      }
+
+      // Obtener datos de standings para estadísticas actuales (solo 2025)
+      const response = await axios.get(`https://f1racepredictor.onrender.com/standings/drivers/${selectedSeason}`);
       const standings = response.data?.standings || [];
       
       // Buscar el piloto por código
@@ -305,6 +455,14 @@ const DriverDetail = () => {
       if (driverStanding) {
         // Combinar datos de API con información adicional si existe
         const additionalInfo = driversInfo[driverCode] || {};
+        const teamsForSeason = additionalInfo.teams?.[selectedSeason] || additionalInfo.teams?.['2025'] || [driverStanding.team || 'Unknown Team'];
+        
+        // Si el piloto no está en esta temporada (teams es null)
+        if (teamsForSeason === null) {
+          setError('Driver not racing in this season');
+          return;
+        }
+        
         setDriverData({
           ...driverStanding,
           ...additionalInfo,
@@ -313,7 +471,7 @@ const DriverDetail = () => {
           nationality: additionalInfo.nationality || 'Unknown',
           birthDate: additionalInfo.birthDate || '2000-01-01',
           number: additionalInfo.number || driverStanding.driver_number || '?',
-          teams: additionalInfo.teams || [driverStanding.team || 'Unknown Team'],
+          teams: teamsForSeason,
           championships: additionalInfo.championships || 0,
           images: additionalInfo.images || ['https://placehold.co/400x500/333333/white?text=DRIVER+PHOTO']
         });
@@ -351,6 +509,8 @@ const DriverDetail = () => {
       'Dutch': '🇳🇱', 'British': '🇬🇧', 'Monegasque': '🇲🇨', 'Spanish': '🇪🇸',
       'Mexican': '🇲🇽', 'Australian': '🇦🇺', 'French': '🇫🇷', 'Canadian': '🇨🇦',
       'German': '🇩🇪', 'Japanese': '🇯🇵', 'Danish': '🇩🇰', 'Finnish': '🇫🇮',
+      'Chinese': '🇨🇳', 'Thai': '🇹🇭', 'Italian': '🇮🇹', 'New Zealander': '🇳🇿',
+      'Brazilian': '🇧🇷', 'Argentine': '🇦🇷',
     };
     return flags[nationality] || '🏁';
   };
@@ -391,6 +551,25 @@ const DriverDetail = () => {
       >
         ← Back to Standings
       </motion.button>
+
+      <div className="season-selector-driver">
+        <motion.button
+          className={`season-btn-driver ${selectedSeason === '2025' ? 'active' : ''}`}
+          onClick={() => setSelectedSeason('2025')}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          2025
+        </motion.button>
+        <motion.button
+          className={`season-btn-driver ${selectedSeason === '2026' ? 'active' : ''}`}
+          onClick={() => setSelectedSeason('2026')}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          2026
+        </motion.button>
+      </div>
 
       <motion.div
         className="driver-header"
@@ -455,7 +634,7 @@ const DriverDetail = () => {
         >
           <div className="stat-icon">📊</div>
           <div className="stat-value">{driverData.total_points}</div>
-          <div className="stat-label">Points (2025)</div>
+          <div className="stat-label">Points ({selectedSeason})</div>
         </motion.div>
 
         <motion.div 
@@ -498,7 +677,7 @@ const DriverDetail = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          <h2>2025 Season Progress</h2>
+          <h2>{selectedSeason} Season Progress</h2>
           <div className="race-history-grid">
             {driverData.race_history.slice(0, 10).map((race, index) => (
               <motion.div
