@@ -1,6 +1,6 @@
 :root {
   /* Colores Pastel F1 */
-  --color-primary: #ffadad;          /* Rojo pastel - primario F1 */
+  --color-primary: #BA0000;          /* Rojo F1 - primario */
   --color-secondary: #b5d6fc;        /* Azul pastel - equipos */
   --color-accent: #ffd4a3;           /* Naranja pastel - McLaren/Ferrari */
   --color-success: #c7f5e8;          /* Verde menta - Aston Martin */
@@ -91,7 +91,7 @@
   /* Colores de equipos (versión pastel) */
   --team-red-bull: #9db4ff;
   --team-mclaren: #ffcb9a;
-  --team-ferrari: #ffadad;
+  --team-ferrari: #ff9999;
   --team-mercedes: #a3f3e8;
   --team-aston-martin: #b8ddc4;
   --team-alpine: #b5c9ff;

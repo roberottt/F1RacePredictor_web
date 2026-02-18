@@ -101,7 +101,7 @@ button {
 }
 
 .btn-primary:hover {
-  background-color: #ff9494;
+  background-color: #d40000;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -160,7 +160,7 @@ input:focus,
 select:focus,
 textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(255, 173, 173, 0.1);
+  box-shadow: 0 0 0 3px rgba(186, 0, 0, 0.1);
 }
 
 input:hover,

@@ -80,7 +80,7 @@
 
 .wiki-search:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(255, 173, 173, 0.1);
+  box-shadow: 0 0 0 3px rgba(186, 0, 0, 0.1);
 }
 
 .wiki-search::placeholder {

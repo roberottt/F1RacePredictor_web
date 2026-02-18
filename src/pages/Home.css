@@ -29,7 +29,7 @@
   gap: var(--spacing-xs);
   width: fit-content;
   padding: var(--spacing-xs) var(--spacing-md);
-  background-color: rgba(255, 173, 173, 0.1);
+  background-color: rgba(186, 0, 0, 0.1);
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
   border-radius: var(--border-radius-full);
@@ -120,7 +120,7 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background-color: rgba(255, 173, 173, 0.1);
+  background-color: rgba(186, 0, 0, 0.1);
   color: var(--color-primary);
   border-radius: var(--border-radius-lg);
   margin-bottom: var(--spacing-md);

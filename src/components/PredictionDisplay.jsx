@@ -266,6 +266,10 @@ const PredictionDisplay = ({ year, round }) => {
     return null;
   }
 
+  // Separar podio del resto
+  const podium = predictions.slice(0, 3);
+  const rest = predictions.slice(3);
+
   return (
     <motion.div 
       id="prediction-results"
@@ -274,75 +278,115 @@ const PredictionDisplay = ({ year, round }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.h2
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        🏁 {getTranslation(language, 'racePrediction')} - {year} {getTranslation(language, 'round')} {round}
-      </motion.h2>
+      <div className="prediction-header">
+        <h2 className="prediction-title">
+          {getTranslation(language, 'racePrediction')}
+        </h2>
+        <p className="prediction-subtitle">
+          {year} • {getTranslation(language, 'round')} {round}
+        </p>
+      </div>
 
-      <div className="predictions-container">
-        <AnimatePresence>
-          {predictions.map((prediction, index) => {
+      {/* Podio Visual */}
+      <motion.div 
+        className="podium-section"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className="podium-grid">
+          {/* Segundo Lugar */}
+          {podium[1] && (
+            <div className="podium-card podium-2">
+              <div className="podium-position">2</div>
+              <div className="podium-flag">{getCountryFlag(getDriverNationality(podium[1].driver))}</div>
+              <h3 className="podium-driver-name">{podium[1].driver}</h3>
+              <p className="podium-team">{podium[1].team}</p>
+              <div className="podium-medal">🥈</div>
+            </div>
+          )}
+          
+          {/* Primer Lugar (Más Alto) */}
+          {podium[0] && (
+            <div className="podium-card podium-1">
+              <div className="podium-position">1</div>
+              <div className="podium-flag">{getCountryFlag(getDriverNationality(podium[0].driver))}</div>
+              <h3 className="podium-driver-name">{podium[0].driver}</h3>
+              <p className="podium-team">{podium[0].team}</p>
+              <div className="podium-medal">🥇</div>
+              <div className="winner-badge">Winner</div>
+            </div>
+          )}
+          
+          {/* Tercer Lugar */}
+          {podium[2] && (
+            <div className="podium-card podium-3">
+              <div className="podium-position">3</div>
+              <div className="podium-flag">{getCountryFlag(getDriverNationality(podium[2].driver))}</div>
+              <h3 className="podium-driver-name">{podium[2].driver}</h3>
+              <p className="podium-team">{podium[2].team}</p>
+              <div className="podium-medal">🥉</div>
+            </div>
+          )}
+        </div>
+      </motion.div>
+
+      {/* Resto de Posiciones - Tabla Elegante */}
+      <motion.div 
+        className="results-section"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <div className="results-table">
+          {rest.map((prediction, idx) => {
+            const position = idx + 4;
             const teamColor = getTeamColor(prediction.team);
             const nationality = getDriverNationality(prediction.driver);
             const driverCode = getDriverCode(prediction.driver);
             
             return (
               <motion.div
-                key={`${prediction.driver}-${index}`}
-                className={`prediction-card ${index < 3 ? 'podium' : ''}`}
-                initial={{ opacity: 0, x: -50 }}
+                key={`${prediction.driver}-${idx}`}
+                className="result-row"
+                initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ 
-                  scale: 1.02,
-                  x: 10,
-                  transition: { duration: 0.2 }
-                }}
-                style={{
-                  '--team-color': teamColor
-                }}
+                transition={{ duration: 0.3, delay: idx * 0.03 }}
               >
-                <div className="team-color-bar" style={{ background: teamColor }}></div>
+                <div className="result-position">{position}</div>
                 
-                <div className="position-badge">
-                  <div className="position-circle">
-                    {index + 1}
-                    {index < 3 && <span className="podium-icon">{getPodiumIcon(index + 1)}</span>}
+                <div className="result-driver">
+                  <div 
+                    className="team-indicator" 
+                    style={{ backgroundColor: teamColor }}
+                  />
+                  <span className="result-flag">{getCountryFlag(nationality)}</span>
+                  <div className="driver-details">
+                    <span className="driver-name-text">{prediction.driver}</span>
+                    <span className="driver-code-text">{driverCode}</span>
                   </div>
                 </div>
 
-                <div className="position-number-container">
-                  <div className="driver-info">
-                    <h3 className="driver-name">{prediction.driver || `Driver ${index + 1}`}</h3>
-                    <p className="driver-code">{driverCode}</p>
-                    <p className="team-name">{prediction.team || 'Team'}</p>
+                <div className="result-team">{prediction.team}</div>
+
+                {prediction.grid_position && (
+                  <div className="result-stat">
+                    <span className="stat-label-mini">Grid</span>
+                    <span className="stat-value-mini">P{prediction.grid_position}</span>
                   </div>
-                </div>
+                )}
 
-                <span className="flag-icon">{getCountryFlag(nationality)}</span>
-
-                <div className="prediction-stats">
-                  {prediction.grid_position && (
-                    <div className="stat grid">
-                      <span className="stat-label">{getTranslation(language, 'grid')}</span>
-                      <span className="stat-value">P{prediction.grid_position}</span>
-                    </div>
-                  )}
-                  {prediction.probability && (
-                    <div className="stat probability">
-                      <span className="stat-label">{getTranslation(language, 'probability')}</span>
-                      <span className="stat-value">{(prediction.probability * 100).toFixed(1)}%</span>
-                    </div>
-                  )}
-                </div>
+                {prediction.probability && (
+                  <div className="result-stat">
+                    <span className="stat-label-mini">Prob.</span>
+                    <span className="stat-value-mini">{(prediction.probability * 100).toFixed(0)}%</span>
+                  </div>
+                )}
               </motion.div>
             );
           })}
-        </AnimatePresence>
-      </div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
