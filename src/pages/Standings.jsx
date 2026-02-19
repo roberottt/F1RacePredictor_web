@@ -399,7 +399,6 @@ function Standings() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className={index < 3 ? `podium-${index + 1}` : ''}
                     >
                       <td className="position-cell">
                         <div className="position-badge">{standing.position}</div>
@@ -488,7 +487,6 @@ function Standings() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className={index < 3 ? `podium-${index + 1}` : ''}
                     >
                       <td className="position-cell">
                         <div className="position-badge">{standing.position}</div>
