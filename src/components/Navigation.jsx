@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useContext, useState } from 'react';
 import { LanguageContext } from '../App';
 import { getTranslation } from '../translations';
-import { Home, Trophy, BarChart3, BookOpen, Menu, X, Globe } from 'lucide-react';
+import { Home, Trophy, BarChart3, BookOpen, Globe } from 'lucide-react';
 import './Navigation.css';
 
 function Navigation() {
   const location = useLocation();
   const { language, setLanguage } = useContext(LanguageContext);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const navItems = [
@@ -27,6 +27,8 @@ function Navigation() {
         initial={{ x: -250 }}
         animate={{ x: 0, width: isCollapsed ? '60px' : '250px' }}
         transition={{ duration: 0.3 }}
+        onMouseEnter={() => setIsCollapsed(false)}
+        onMouseLeave={() => setIsCollapsed(true)}
       >
         <div className="sidebar-content">
           {/* Logo */}
@@ -108,12 +110,7 @@ function Navigation() {
               </AnimatePresence>
             </button>
             
-            <button 
-              className="sidebar-collapse-btn"
-              onClick={() => setIsCollapsed(!isCollapsed)}
-            >
-              <Menu size={20} />
-            </button>
+
           </div>
         </div>
       </motion.nav>

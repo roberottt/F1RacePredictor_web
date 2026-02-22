@@ -1,5 +1,11 @@
 .wiki-page {
   min-height: 100vh;
+  background: radial-gradient(
+    ellipse 120% 100% at center top,
+    rgba(40, 40, 40, 1) 0%,
+    rgba(25, 25, 25, 1) 30%,
+    rgba(15, 15, 15, 1) 100%
+  );
 }
 
 .wiki-container {
@@ -9,33 +15,40 @@
 
 .wiki-header {
   text-align: center;
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
 }
 
 .wiki-header h2 {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-semibold);
   color: var(--text-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .wiki-subtitle {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   color: var(--text-secondary);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .wiki-tabs {
   display: flex;
   justify-content: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-xl);
-  background-color: var(--bg-card);
+  margin-bottom: var(--spacing-lg);
+  background-color: rgba(30, 30, 30, 0.8);
   padding: var(--spacing-xs);
   border-radius: var(--border-radius-lg);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(239, 0, 0, 0.2);
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .wiki-tab {
@@ -56,171 +69,471 @@
 }
 
 .wiki-tab.active {
-  background-color: var(--bg-secondary);
+  background-color: rgba(239, 0, 0, 0.2);
   color: var(--text-primary);
   box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(239, 0, 0, 0.3);
 }
 
-.search-container {
-  max-width: 500px;
-  margin: 0 auto var(--spacing-xl);
-}
-
-.wiki-search {
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
   width: 100%;
-  padding: var(--spacing-md);
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-md);
-  color: var(--text-primary);
-  font-size: var(--font-size-base);
-  outline: none;
-  transition: all var(--transition-fast);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+  overflow: visible;
 }
 
-.wiki-search:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(186, 0, 0, 0.1);
+.carousel-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
 }
 
-.wiki-search::placeholder {
-  color: var(--text-tertiary);
+.carousel-card {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  overflow: visible;
+  min-height: 100vh;
 }
 
-.wiki-list {
-  margin-top: 2rem;
+.carousel-car-section {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    ellipse 100% 80% at center,
+    rgba(50, 50, 50, 0.6) 0%,
+    rgba(35, 35, 35, 0.85) 40%,
+    rgba(25, 25, 25, 0.98) 70%,
+    rgba(20, 20, 20, 1) 100%
+  );
+  overflow: hidden;
+  z-index: 1;
 }
 
-.list-title {
-  font-size: 1.5rem;
+.carousel-car-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, var(--team-color, #ef0000), transparent);
+  opacity: 0.9;
+  z-index: 3;
+}
+
+.carousel-car-img {
+  max-width: 90%;
+  max-height: 70%;
+  object-fit: contain;
+  filter: brightness(1.2) drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-car-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.3) drop-shadow(0 25px 60px rgba(255, 255, 255, 0.2));
+}
+
+.carousel-team-name {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.team-logo-overlay {
+  max-width: 200px;
+  max-height: 60px;
+  margin-bottom: 1rem;
+  filter: brightness(1.2) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+.carousel-team-name h2 {
+  font-size: 4rem;
+  font-weight: 900;
   color: #ffffff;
-  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-info {
+  padding: 3rem 2.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0.95) 0%,
+    rgba(18, 18, 18, 0.98) 3%,
+    rgba(15, 15, 15, 1) 10%
+  );
+  position: relative;
+  z-index: 10;
+  margin-top: 0;
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.9);
+  border-radius: 30px 30px 0 0;
+}
+
+.team-full-name {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.team-full-name h3 {
+  font-size: 2rem;
   font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.team-nationality {
+  font-size: 1rem;
+  color: #999;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.carousel-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  border: 1px solid rgba(239, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.carousel-stat {
   text-align: center;
 }
 
-.selector-grid {
+.stat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ef0000;
+}
+
+.carousel-details {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+  padding: 2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(239, 0, 0, 0.2);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #999;
+  font-size: 0.95rem;
+}
+
+.detail-value {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.carousel-drivers {
+  margin-bottom: 3rem;
+  padding: 2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(239, 0, 0, 0.2);
+}
+
+.carousel-drivers h4,
+.carousel-history h4,
+.carousel-recent h4 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-left: 4px solid #ef0000;
+  padding-left: 1rem;
+  margin-top: 0;
+}
+
+.drivers-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
-.selector-card {
-  background: rgba(42, 42, 42, 0.8);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(239, 0, 0, 0.3);
-  border-left: 5px solid;
-  border-radius: 15px;
-  padding: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.selector-card:hover {
-  border-color: rgba(239, 0, 0, 0.6);
-  box-shadow: 0 8px 25px rgba(239, 0, 0, 0.3);
-  background: rgba(50, 50, 50, 0.9);
-}
-
-.selector-content {
+.driver-card {
+  background: linear-gradient(135deg, rgba(239, 0, 0, 0.2), rgba(239, 0, 0, 0.1));
+  border: 1px solid rgba(239, 0, 0, 0.3);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: all 0.3s ease;
 }
 
-.selector-info {
-  flex: 1;
+.driver-card:hover {
+  background: linear-gradient(135deg, rgba(239, 0, 0, 0.3), rgba(239, 0, 0, 0.2));
+  transform: translateX(5px);
 }
 
-.selector-info h4 {
+.driver-number {
   font-size: 1.5rem;
-  color: #ffffff;
-  margin: 0 0 0.3rem 0;
-  font-weight: 700;
-}
-
-.selector-subtitle {
-  font-size: 0.9rem;
-  color: #b0b0b0;
-  margin: 0 0 0.8rem 0;
-}
-
-.selector-stats {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  font-size: 0.85rem;
-  color: #e0e0e0;
-}
-
-.stat-item strong {
-  color: #ef0000;
-  font-size: 1rem;
   font-weight: 800;
+  color: #ef0000;
 }
 
-.selector-drivers {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.driver-badge {
-  background: rgba(239, 0, 0, 0.2);
-  border: 1px solid rgba(239, 0, 0, 0.4);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
+.driver-name {
+  font-size: 1.1rem;
   color: #ffffff;
   font-weight: 600;
 }
 
-.selector-arrow {
-  font-size: 2rem;
-  color: #ef0000;
+.carousel-history,
+.carousel-recent {
+  margin-bottom: 3rem;
+  padding: 2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(239, 0, 0, 0.2);
+}
+
+.carousel-history h4,
+.carousel-recent h4 {
+  margin-top: 0;
+}
+
+.carousel-history p,
+.carousel-recent p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  text-align: justify;
+}
+
+.view-details-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(239, 0, 0, 0.8);
+  border: 2px solid rgba(239, 0, 0, 0.6);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1.1rem;
   font-weight: 700;
-  opacity: 0.7;
+  cursor: pointer;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+  margin-top: 1rem;
 }
 
-.selector-card:hover .selector-arrow {
-  opacity: 1;
-  transform: translateX(5px);
+.view-details-btn:hover {
+  background: rgba(239, 0, 0, 1);
+  border-color: rgba(255, 50, 50, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(239, 0, 0, 0.5);
 }
 
-/* Driver-specific styles */
-.driver-selector {
-  border-left-color: rgba(239, 0, 0, 0.5) !important;
-}
-
-.driver-number-circle {
+/* Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, rgba(239, 0, 0, 0.9), rgba(186, 0, 0, 0.9));
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 3rem;
   width: 60px;
   height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-weight: 300;
+  line-height: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-nav:hover {
+  background: linear-gradient(135deg, #ff1111, #cc0000);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 30px rgba(239, 0, 0, 0.6);
+}
+
+.carousel-nav-left {
+  left: 0;
+}
+
+.carousel-nav-right {
+  right: 0;
+}
+
+/* Indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(239, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator:hover {
+  background: rgba(239, 0, 0, 0.6);
+  transform: scale(1.2);
+}
+
+.indicator.active {
+  background: #ef0000;
+  width: 40px;
+  border-radius: 10px;
+  border-color: #ef0000;
+}
+
+/* Driver Carousel Specific Styles */
+.driver-carousel {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+}
+
+.driver-carousel-header {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.driver-number-large {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ef0000, #ff4444);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 5rem;
+  font-weight: 900;
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(239, 0, 0, 0.4);
+  box-shadow: 0 10px 40px rgba(239, 0, 0, 0.6);
   flex-shrink: 0;
 }
 
-.driver-nationality {
-  font-size: 0.85rem;
-  color: #888;
-  margin-top: 0.3rem;
+.driver-info-large {
+  flex: 1;
 }
 
+.driver-info-large h3 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.driver-team-name {
+  font-size: 1.3rem;
+  color: #b0b0b0;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.driver-nationality-badge {
+  display: inline-block;
+  background: rgba(239, 0, 0, 0.2);
+  border: 1px solid rgba(239, 0, 0, 0.4);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
-  .selector-grid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  .carousel-container {
+    padding: 0 60px;
+  }
+
+  .carousel-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carousel-details {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-car-section {
+    min-height: 100vh;
+  }
+
+  .carousel-team-name h2 {
+    font-size: 3rem;
+  }
+
+  .carousel-info {
+    margin-top: 0;
   }
 }
 
@@ -240,29 +553,133 @@
     padding: 0.8rem 1.5rem;
   }
 
-  .selector-grid {
+  .carousel-container {
+    padding: 0 50px;
+    margin: 0 auto;
+  }
+
+  .carousel-car-section {
+    min-height: 100vh;
+  }
+
+  .carousel-team-name {
+    bottom: 60px;
+  }
+
+  .carousel-team-name h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .team-logo-overlay {
+    max-width: 150px;
+    max-height: 45px;
+  }
+
+  .carousel-info {
+    margin-top: 0;
+    padding: 2rem 1.5rem;
+  }
+
+  .team-full-name h3 {
+    font-size: 1.5rem;
+  }
+
+  .team-nationality {
+    font-size: 0.9rem;
+  }
+
+  .carousel-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .drivers-list {
     grid-template-columns: 1fr;
   }
 
-  .selector-card {
-    padding: 1rem;
+  .carousel-nav {
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
   }
 
-  .selector-info h4 {
+  .driver-carousel-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .driver-number-large {
+    width: 140px;
+    height: 140px;
+    font-size: 4rem;
+  }
+
+  .driver-info-large h3 {
+    font-size: 2rem;
+  }
+
+  .driver-team-name {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 0 40px;
+  }
+
+  .carousel-car-section {
+    min-height: 100vh;
+  }
+
+  .carousel-team-name {
+    bottom: 40px;
+  }
+
+  .carousel-team-name h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .team-logo-overlay {
+    max-width: 120px;
+    max-height: 35px;
+  }
+
+  .carousel-car-img {
+    max-width: 95%;
+    max-height: 65%;
+  }
+
+  .carousel-info {
+    margin-top: 0;
+    padding: 1.5rem 1rem;
+  }
+
+  .team-full-name h3 {
     font-size: 1.3rem;
   }
 
-  .selector-stats {
-    gap: 0.5rem;
-  }
-
-  .stat-item {
+  .team-nationality {
     font-size: 0.8rem;
   }
 
-  .driver-number-circle {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+  .carousel-drivers h4,
+  .carousel-history h4,
+  .carousel-recent h4 {
+    font-size: 1.1rem;
+  }
+
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
   }
 }

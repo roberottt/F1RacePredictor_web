@@ -321,7 +321,7 @@
 }
 
 .retry-btn:hover {
-  background-color: #d40000;
+  background-color: rgba(186, 0, 0, 0.85);
   transform: translateY(-1px);
 }
 

@@ -97,25 +97,25 @@
 }
 
 .tab:hover {
-  background: rgba(239, 0, 0, 0.1);
-  border-color: #ef0000;
+  background: rgba(186, 0, 0, 0.1);
+  border-color: var(--color-primary);
 }
 
 .tab.active {
-  background: linear-gradient(135deg, rgba(239, 0, 0, 0.15), rgba(255, 68, 68, 0.15));
-  border-color: #ef0000;
-  color: #ffffff;
-  box-shadow: 0 0 20px rgba(239, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(186, 0, 0, 0.15), rgba(186, 0, 0, 0.1));
+  border-color: var(--color-primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 20px rgba(186, 0, 0, 0.4);
 }
 
 .standings-table-container {
-  background: rgba(42, 42, 42, 0.6);
-  border-radius: 12px;
-  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(239, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
   overflow-x: auto;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-base);
 }
 
 .standings-table {
@@ -124,33 +124,33 @@
 }
 
 .standings-table thead {
-  background: rgba(239, 0, 0, 0.1);
+  background: rgba(186, 0, 0, 0.1);
 }
 
 .standings-table th {
-  padding: 1.2rem;
+  padding: var(--spacing-lg);
   text-align: left;
-  color: #ef0000;
-  font-weight: 700;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   letter-spacing: 1px;
-  border-bottom: 2px solid rgba(239, 0, 0, 0.3);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .standings-table tbody tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
 }
 
 .standings-table tbody tr:hover {
-  background: rgba(239, 0, 0, 0.05);
+  background: var(--bg-hover);
   transform: scale(1.01);
 }
 
 .standings-table td {
-  padding: 1.2rem;
-  color: #ffffff;
+  padding: var(--spacing-lg);
+  color: var(--text-primary);
 }
 
 .position-cell {
@@ -163,12 +163,12 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background: rgba(239, 0, 0, 0.2);
-  border: 2px solid rgba(239, 0, 0, 0.5);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #fff;
+  border-radius: var(--border-radius-full);
+  background: rgba(186, 0, 0, 0.2);
+  border: 2px solid var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
 }
 
 .driver-cell {
@@ -187,46 +187,46 @@
   justify-content: center;
   width: 35px;
   height: 35px;
-  background: rgba(239, 0, 0, 0.15);
-  border: 2px solid rgba(239, 0, 0, 0.3);
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: #ef0000;
+  background: rgba(186, 0, 0, 0.15);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
 }
 
 .driver-name .name {
-  font-size: 1rem;
-  color: #ffffff;
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
 }
 
 .driver-name-link {
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast);
   position: relative;
   display: inline-block;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  font-size: 1rem !important;
+  color: var(--text-primary) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  font-size: var(--font-size-base) !important;
   opacity: 1 !important;
   visibility: visible !important;
   z-index: 10;
   text-decoration: none;
-  -webkit-text-fill-color: #ffffff;
+  -webkit-text-fill-color: var(--text-primary);
 }
 
 .driver-name-link:hover {
-  color: #ef0000 !important;
-  -webkit-text-fill-color: #ef0000;
+  color: var(--color-primary) !important;
+  -webkit-text-fill-color: var(--color-primary);
   transform: translateX(5px);
 }
 
 .driver-name-link::after {
   content: '→';
   opacity: 0;
-  margin-left: 0.5rem;
-  transition: opacity 0.3s ease;
-  color: #ef0000;
+  margin-left: var(--spacing-sm);
+  transition: opacity var(--transition-fast);
+  color: var(--color-primary);
 }
 
 .driver-name-link:hover::after {

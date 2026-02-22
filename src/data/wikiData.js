@@ -1,3 +1,16 @@
+import cadillacLogo from '../assets/image.png';
+import rbCarImage from '../assets/rb.png';
+import mclarenCarImage from '../assets/mclaren.png';
+import ferrariCarImage from '../assets/ferrari.png';
+import mercedesCarImage from '../assets/mercedes.png';
+import astonMartinCarImage from '../assets/astonmartin.png';
+import alpineCarImage from '../assets/alpine.png';
+import williamsCarImage from '../assets/williams.png';
+import haasCarImage from '../assets/haas.png';
+import racingBullsCarImage from '../assets/racingbulls.png';
+import audiCarImage from '../assets/audi.png';
+import cadillacCarImage from '../assets/cadillac.png';
+
 // Datos de constructores para Wiki
 export const constructorsData = {
   'mclaren': {
@@ -19,7 +32,8 @@ export const constructorsData = {
     polePositions: 156,
     fastestLaps: 163,
     teamColor: '#FF8700',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/manual/teams/2023/mclaren-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677245032/content/dam/fom-website/2018-redesign-assets/team%20logos/mclaren.png',
+    carImage: mclarenCarImage,
     drivers: [
       { name: 'Lando Norris', code: 'NOR', number: 4 },
       { name: 'Oscar Piastri', code: 'PIA', number: 81 }
@@ -46,7 +60,8 @@ export const constructorsData = {
     polePositions: 249,
     fastestLaps: 261,
     teamColor: '#DC0000',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244663/content/dam/fom-website/manual/teams/2023/ferrari-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677245030/content/dam/fom-website/2018-redesign-assets/team%20logos/ferrari.png',
+    carImage: ferrariCarImage,
     drivers: [
       { name: 'Charles Leclerc', code: 'LEC', number: 16 },
       { name: 'Lewis Hamilton', code: 'HAM', number: 44 }
@@ -73,7 +88,8 @@ export const constructorsData = {
     polePositions: 96,
     fastestLaps: 91,
     teamColor: '#0600EF',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244809/content/dam/fom-website/manual/teams/2023/red-bull-racing-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677245037/content/dam/fom-website/2018-redesign-assets/team%20logos/red%20bull.png',
+    carImage: rbCarImage,
     drivers: [
       { name: 'Max Verstappen', code: 'VER', number: 1 },
       { name: 'Isack Hadjar', code: 'HAD', number: 6 }
@@ -100,7 +116,8 @@ export const constructorsData = {
     polePositions: 134,
     fastestLaps: 97,
     teamColor: '#00D2BE',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677245037/content/dam/fom-website/manual/teams/2023/mercedes-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677245034/content/dam/fom-website/2018-redesign-assets/team%20logos/mercedes.png',
+    carImage: mercedesCarImage,
     drivers: [
       { name: 'George Russell', code: 'RUS', number: 63 },
       { name: 'Andrea Kimi Antonelli', code: 'ANT', number: 12 }
@@ -127,7 +144,8 @@ export const constructorsData = {
     polePositions: 1,
     fastestLaps: 7,
     teamColor: '#006F62',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244548/content/dam/fom-website/manual/teams/2023/aston-martin-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677245019/content/dam/fom-website/2018-redesign-assets/team%20logos/aston%20martin.png',
+    carImage: astonMartinCarImage,
     drivers: [
       { name: 'Fernando Alonso', code: 'ALO', number: 14 },
       { name: 'Lance Stroll', code: 'STR', number: 18 }
@@ -154,7 +172,8 @@ export const constructorsData = {
     polePositions: 0,
     fastestLaps: 1,
     teamColor: '#0090FF',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244509/content/dam/fom-website/manual/teams/2023/alpine-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244509/content/dam/fom-website/2018-redesign-assets/team%20logos/alpine.png',
+    carImage: alpineCarImage,
     drivers: [
       { name: 'Pierre Gasly', code: 'GAS', number: 10 },
       { name: 'Franco Colapinto', code: 'COL', number: 43 }
@@ -181,7 +200,8 @@ export const constructorsData = {
     polePositions: 128,
     fastestLaps: 133,
     teamColor: '#005AFF',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677245368/content/dam/fom-website/manual/teams/2023/williams-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677245046/content/dam/fom-website/2018-redesign-assets/team%20logos/williams.png',
+    carImage: williamsCarImage,
     drivers: [
       { name: 'Alexander Albon', code: 'ALB', number: 23 },
       { name: 'Carlos Sainz', code: 'SAI', number: 55 }
@@ -208,7 +228,8 @@ export const constructorsData = {
     polePositions: 1,
     fastestLaps: 2,
     teamColor: '#FFFFFF',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244735/content/dam/fom-website/manual/teams/2023/haas-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244764/content/dam/fom-website/2018-redesign-assets/team%20logos/haas.png',
+    carImage: haasCarImage,
     drivers: [
       { name: 'Esteban Ocon', code: 'OCO', number: 31 },
       { name: 'Oliver Bearman', code: 'BEA', number: 87 }
@@ -235,7 +256,8 @@ export const constructorsData = {
     polePositions: 1,
     fastestLaps: 1,
     teamColor: '#0600EF',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244898/content/dam/fom-website/manual/teams/2023/alphatauri-2023-manual.png',
+    logo: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1708614287/content/dam/fom-website/2018-redesign-assets/team%20logos/rb.png',
+    carImage: racingBullsCarImage,
     drivers: [
       { name: 'Liam Lawson', code: 'LAW', number: 30 },
       { name: 'Arvid Lindblad', code: 'LIN', number: 22 }
@@ -262,7 +284,8 @@ export const constructorsData = {
     polePositions: 1,
     fastestLaps: 7,
     teamColor: '#FF1801',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244437/content/dam/fom-website/manual/teams/2023/alfa-romeo-2023-manual.png',
+    logo: 'https://www.carlogos.org/car-logos/audi-logo-2016.png',
+    carImage: audiCarImage,
     drivers: [
       { name: 'Nico Hulkenberg', code: 'HUL', number: 27 },
       { name: 'Gabriel Bortoleto', code: 'BOR', number: 5 }
@@ -289,7 +312,8 @@ export const constructorsData = {
     polePositions: 0,
     fastestLaps: 0,
     teamColor: '#000000',
-    carImage: 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244735/content/dam/fom-website/manual/teams/2023/haas-2023-manual.png',
+    logo: cadillacLogo,
+    carImage: cadillacCarImage,
     drivers: [
       { name: 'Sergio Pérez', code: 'PER', number: 11 },
       { name: 'Valtteri Bottas', code: 'BOT', number: 77 }

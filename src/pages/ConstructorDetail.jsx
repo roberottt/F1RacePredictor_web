@@ -157,11 +157,7 @@ function ConstructorDetail() {
                 to={`/driver/${driver.code}`}
                 className="driver-card-link"
               >
-                <motion.div
-                  className="driver-card-mini"
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
+                <div className="driver-card-mini">
                   <div className="driver-number-badge" style={{ background: constructor.teamColor }}>
                     {driver.number}
                   </div>
@@ -169,7 +165,7 @@ function ConstructorDetail() {
                     <h4>{driver.name}</h4>
                     <p>{getTranslation(language, 'viewProfile')} →</p>
                   </div>
-                </motion.div>
+                </div>
               </Link>
             ))}
           </div>
