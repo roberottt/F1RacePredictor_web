@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageContext } from '../App';
@@ -10,8 +10,23 @@ function Wiki() {
   const [activeTab, setActiveTab] = useState('constructors');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [hideTeamName, setHideTeamName] = useState(false);
   const { language } = useContext(LanguageContext);
   const navigate = useNavigate();
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (carouselRef.current) {
+        const rect = carouselRef.current.getBoundingClientRect();
+        // Ocultar el nombre cuando hemos hecho scroll más de 70vh
+        setHideTeamName(-rect.top > window.innerHeight * 0.7);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const constructors = Object.values(constructorsData);
   const drivers = driversWikiList;
@@ -23,6 +38,9 @@ function Wiki() {
     } else {
       setCurrentIndex((prev) => (prev + 1) % drivers.length);
     }
+    if (carouselRef.current) {
+      carouselRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const handlePrev = () => {
@@ -32,12 +50,18 @@ function Wiki() {
     } else {
       setCurrentIndex((prev) => (prev - 1 + drivers.length) % drivers.length);
     }
+    if (carouselRef.current) {
+      carouselRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
     setCurrentIndex(0);
     setDirection(0);
+    if (carouselRef.current) {
+      carouselRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const handleConstructorClick = (constructorId) => {
@@ -53,32 +77,19 @@ function Wiki() {
 
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
       opacity: 0
     }),
     center: {
-      x: 0,
       opacity: 1
     },
     exit: (direction) => ({
-      x: direction < 0 ? 1000 : -1000,
       opacity: 0
     })
   };
 
   return (
     <main className="wiki-page">
-      <motion.div
-        className="wiki-container"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="wiki-header">
-          <h2>{getTranslation(language, 'wikiTitle')}</h2>
-          <p className="wiki-subtitle">{getTranslation(language, 'wikiSubtitle')}</p>
-        </div>
-
+      <div className="wiki-container">
         <div className="wiki-tabs">
           <motion.button
             className={`wiki-tab ${activeTab === 'constructors' ? 'active' : ''}`}
@@ -99,15 +110,7 @@ function Wiki() {
         </div>
 
         {activeTab === 'constructors' && (
-          <div className="carousel-container">
-            <button 
-              className="carousel-nav carousel-nav-left"
-              onClick={handlePrev}
-              aria-label="Previous team"
-            >
-              ‹
-            </button>
-
+          <div className="carousel-container" ref={carouselRef}>
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -117,8 +120,7 @@ function Wiki() {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 }
+                  opacity: { duration: 0.3 }
                 }}
                 className="carousel-content"
               >
@@ -129,13 +131,29 @@ function Wiki() {
                       '--team-color': currentConstructor.teamColor
                     }}
                   >
+                    <div className="carousel-nav-container">
+                      <button 
+                        className="carousel-nav carousel-nav-left"
+                        onClick={handlePrev}
+                        aria-label="Previous team"
+                      >
+                        ‹
+                      </button>
+                      <button 
+                        className="carousel-nav carousel-nav-right"
+                        onClick={handleNext}
+                        aria-label="Next team"
+                      >
+                        ›
+                      </button>
+                    </div>
                     <img 
                       src={currentConstructor.carImage} 
                       alt={`${currentConstructor.name} car`}
                       className="carousel-car-img"
                       onClick={() => handleConstructorClick(currentConstructor.id)}
                     />
-                    <div className="carousel-team-name">
+                    <div className={`carousel-team-name ${hideTeamName ? 'hidden' : ''}`}>
                       {currentConstructor.logo && (
                         <img 
                           src={currentConstructor.logo} 
@@ -224,14 +242,6 @@ function Wiki() {
               </motion.div>
             </AnimatePresence>
 
-            <button 
-              className="carousel-nav carousel-nav-right"
-              onClick={handleNext}
-              aria-label="Next team"
-            >
-              ›
-            </button>
-
             <div className="carousel-indicators">
               {constructors.map((_, idx) => (
                 <button
@@ -240,6 +250,9 @@ function Wiki() {
                   onClick={() => {
                     setDirection(idx > currentIndex ? 1 : -1);
                     setCurrentIndex(idx);
+                    if (carouselRef.current) {
+                      carouselRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                   }}
                   aria-label={`Go to team ${idx + 1}`}
                 />
@@ -267,8 +280,7 @@ function Wiki() {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 }
+                  opacity: { duration: 0.3 }
                 }}
                 className="carousel-content"
               >
@@ -317,7 +329,7 @@ function Wiki() {
             </div>
           </div>
         )}
-      </motion.div>
+      </div>
     </main>
   );
 }
