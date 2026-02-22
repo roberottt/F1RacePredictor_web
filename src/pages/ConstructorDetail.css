@@ -276,7 +276,17 @@
   text-align: justify;
 }
 
+@media (max-width: 1024px) {
+  .constructor-detail-container {
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 768px) {
+  .constructor-detail-container {
+    margin-left: auto;
+  }
+
   .constructor-title-section h1 {
     font-size: 2rem;
   }

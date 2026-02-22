@@ -11,22 +11,28 @@ function Wiki() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [hideTeamName, setHideTeamName] = useState(false);
+  const [hideDriverName, setHideDriverName] = useState(false);
   const { language } = useContext(LanguageContext);
   const navigate = useNavigate();
   const carouselRef = useRef(null);
+  const driverCarouselRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (carouselRef.current) {
+      if (activeTab === 'constructors' && carouselRef.current) {
         const rect = carouselRef.current.getBoundingClientRect();
         // Ocultar el nombre cuando hemos hecho scroll más de 70vh
         setHideTeamName(-rect.top > window.innerHeight * 0.7);
+      } else if (activeTab === 'drivers' && driverCarouselRef.current) {
+        const rect = driverCarouselRef.current.getBoundingClientRect();
+        // Ocultar el nombre cuando hemos hecho scroll más de 70vh
+        setHideDriverName(-rect.top > window.innerHeight * 0.7);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeTab]);
 
   const constructors = Object.values(constructorsData);
   const drivers = driversWikiList;
@@ -262,15 +268,7 @@ function Wiki() {
         )}
 
         {activeTab === 'drivers' && (
-          <div className="carousel-container">
-            <button 
-              className="carousel-nav carousel-nav-left"
-              onClick={handlePrev}
-              aria-label="Previous driver"
-            >
-              ‹
-            </button>
-
+          <div className="carousel-container" ref={driverCarouselRef}>
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -284,35 +282,75 @@ function Wiki() {
                 }}
                 className="carousel-content"
               >
-                <div className="carousel-card driver-carousel">
-                  <div className="driver-carousel-header">
-                    <div className="driver-number-large">
-                      {currentDriver.number}
+                <div className="carousel-card">
+                  <div 
+                    className="carousel-car-section driver-photo-section"
+                  >
+                    <div className="carousel-nav-container">
+                      <button 
+                        className="carousel-nav carousel-nav-left"
+                        onClick={handlePrev}
+                        aria-label="Previous driver"
+                      >
+                        ‹
+                      </button>
+                      <button 
+                        className="carousel-nav carousel-nav-right"
+                        onClick={handleNext}
+                        aria-label="Next driver"
+                      >
+                        ›
+                      </button>
                     </div>
-                    <div className="driver-info-large">
-                      <h3>{currentDriver.name}</h3>
-                      <p className="driver-team-name">{currentDriver.team}</p>
-                      <p className="driver-nationality-badge">{currentDriver.nationality}</p>
+                    <img 
+                      src={currentDriver.image} 
+                      alt={`${currentDriver.name}`}
+                      className="carousel-driver-img"
+                      onClick={() => handleDriverClick(currentDriver.code)}
+                    />
+                    <div className={`carousel-team-name carousel-driver-name ${hideDriverName ? 'hidden' : ''}`}>
+                      <div className="driver-number-overlay">
+                        {currentDriver.number}
+                      </div>
+                      <h2>{currentDriver.name}</h2>
                     </div>
                   </div>
 
-                  <button 
-                    className="view-details-btn"
-                    onClick={() => handleDriverClick(currentDriver.code)}
-                  >
-                    View Driver Profile →
-                  </button>
+                  <div className="carousel-info">
+                    <div className="team-full-name driver-full-info">
+                      <h3>{currentDriver.name}</h3>
+                      <div className="team-nationality">{currentDriver.nationality} | #{currentDriver.number}</div>
+                    </div>
+
+                    <div className="carousel-stats-grid">
+                      <div className="carousel-stat">
+                        <span className="stat-label">Team</span>
+                        <span className="stat-value driver-team">{currentDriver.team}</span>
+                      </div>
+                      <div className="carousel-stat">
+                        <span className="stat-label">Number</span>
+                        <span className="stat-value">#{currentDriver.number}</span>
+                      </div>
+                      <div className="carousel-stat">
+                        <span className="stat-label">Code</span>
+                        <span className="stat-value">{currentDriver.code}</span>
+                      </div>
+                      <div className="carousel-stat">
+                        <span className="stat-label">Nationality</span>
+                        <span className="stat-value">{currentDriver.nationality}</span>
+                      </div>
+                    </div>
+
+                    <button 
+                      className="view-details-btn"
+                      onClick={() => handleDriverClick(currentDriver.code)}
+                    >
+                      View Driver Profile →
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>
-
-            <button 
-              className="carousel-nav carousel-nav-right"
-              onClick={handleNext}
-              aria-label="Next driver"
-            >
-              ›
-            </button>
 
             <div className="carousel-indicators">
               {drivers.map((_, idx) => (
