@@ -38,7 +38,13 @@ function Home() {
             </Link>
           </div>
           <div className="hero-illustration">
-            <div className="car-icon">🏎️</div>
+            <iframe
+              className="hero-video"
+              src="https://tenor.com/embed/25339191"
+              title="F1 GIF"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
           </div>
         </motion.section>
 
