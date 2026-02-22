@@ -30,7 +30,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 100;
-  transform: translateX(-125px);
+  transform: translateX(-90px);
 }
 
 .wiki-tab {
@@ -178,7 +178,7 @@
   border-radius: 30px 30px 0 0;
   max-width: 1200px;
   margin-top: 100vh;
-  margin-left: calc(50% - 600px - 125px);
+  margin-left: calc(50% - 600px - 90px);
   margin-right: auto;
 }
 
@@ -380,7 +380,7 @@
   left: 50%;
   margin-left: -700px;
   top: 50vh;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(35px);
   pointer-events: none;
   z-index: 100;
   height: 60px;
@@ -430,6 +430,7 @@
   padding-bottom: 3rem;
   position: relative;
   z-index: 10;
+  transform: translateX(-90px);
 }
 
 .indicator {
@@ -527,6 +528,7 @@
     max-width: 100%;
     left: 0;
     margin-left: 0;
+    transform: translateY(-50%) translateX(0);
   }
 
   .carousel-nav-left {
@@ -582,6 +584,7 @@
     max-width: 100%;
     left: 0;
     margin-left: 0;
+    transform: translateY(-50%) translateX(0);
   }
 
   .carousel-nav-left {
@@ -645,6 +648,10 @@
     font-size: 2rem;
   }
 
+  .carousel-indicators {
+    transform: translateX(0);
+  }
+
   .driver-carousel-header {
     flex-direction: column;
     text-align: center;
@@ -675,6 +682,7 @@
     max-width: 100%;
     left: 0;
     margin-left: 0;
+    transform: translateY(-50%) translateX(0);
   }
 
   .carousel-nav-left {
