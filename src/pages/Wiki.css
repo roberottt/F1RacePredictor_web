@@ -1056,33 +1056,39 @@
 
   /* Mejorar posicionamiento del nombre del piloto */
   .carousel-driver-name {
-    bottom: 160px;
+    bottom: 80px;
     width: 95%;
     max-width: 95%;
-    padding: 0 0.5rem 20px;
+    padding: 0 0.5rem;
     box-sizing: border-box;
-    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
   }
 
   .carousel-driver-name h2 {
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
     word-break: break-word;
-    margin: 0.5rem 0 0 0;
+    margin: 0;
+    line-height: 1.2;
   }
 
   .carousel-driver-name .driver-number-overlay {
-    width: 60px;
-    height: 60px;
-    font-size: 1.8rem;
-    margin-bottom: 0.3rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
   }
 
   .carousel-driver-img {
-    max-height: 70%;
-    height: 70%;
+    max-height: 75%;
+    height: 75%;
     max-width: 85%;
     width: auto;
+    margin-bottom: 0;
   }
 
   /* Asegurar que no haya overflow horizontal */
