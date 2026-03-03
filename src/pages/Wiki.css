@@ -863,6 +863,7 @@
     height: 100vh;
     width: 100%;
     cursor: grab;
+    padding-bottom: env(safe-area-inset-bottom, 30px);
   }
 
   .carousel-car-section:active {
@@ -871,9 +872,11 @@
 
   /* Mejorar posición del logo y nombre del equipo */
   .carousel-team-name {
-    bottom: 180px;
+    bottom: 120px;
     width: 95%;
     max-width: 95%;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
   }
 
   .carousel-team-name h2 {
@@ -1053,17 +1056,26 @@
 
   /* Mejorar posicionamiento del nombre del piloto */
   .carousel-driver-name {
-    bottom: 180px;
+    bottom: 120px;
     width: 95%;
     max-width: 95%;
-    padding: 0 0.5rem;
+    padding: 0 0.5rem 20px;
     box-sizing: border-box;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   }
 
   .carousel-driver-name h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     letter-spacing: 0.5px;
     word-break: break-word;
+    margin: 0.5rem 0 0 0;
+  }
+
+  .carousel-driver-name .driver-number-overlay {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
   }
 
   .carousel-driver-img {
