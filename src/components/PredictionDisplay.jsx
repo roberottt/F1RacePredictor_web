@@ -32,14 +32,6 @@ const PredictionDisplay = ({ year, round }) => {
   }, [year, round]);
 
   const fetchPredictions = async () => {
-    // Si es 2026, no hacer llamada a la API
-    if (year === 2026 || year === '2026') {
-      setLoading(false);
-      setError(null);
-      setPredictions([]);
-      return;
-    }
-
     setLoading(true);
     setError(null);
     
@@ -215,46 +207,6 @@ const PredictionDisplay = ({ year, round }) => {
           >
             {getTranslation(language, 'retry')}
           </motion.button>
-        </div>
-      </motion.div>
-    );
-  }
-
-  // Mensaje especial para 2026
-  if (year === 2026 || year === '2026') {
-    return (
-      <motion.div 
-        className="prediction-display"
-        id="prediction-results"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="coming-soon-container">
-          <motion.div
-            className="coming-soon-icon"
-            animate={{ 
-              scale: [1, 1.1, 1],
-              rotate: [0, 5, -5, 0]
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            🏁
-          </motion.div>
-          <h2 className="coming-soon-title">
-            {getTranslation(language, 'predictions2026ComingSoon')}
-          </h2>
-          <p className="coming-soon-text">
-            {getTranslation(language, 'predictions2026Text')}
-          </p>
-          <motion.div 
-            className="coming-soon-badge"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            🏎️ {getTranslation(language, 'season2026')} 🏎️
-          </motion.div>
         </div>
       </motion.div>
     );
