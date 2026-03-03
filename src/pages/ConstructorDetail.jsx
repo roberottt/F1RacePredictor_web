@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { LanguageContext } from '../App';
 import { getTranslation } from '../translations';
 import { constructorsData } from '../data/wikiData';
+import { getTeamTranslation } from '../data/wikiDataTranslations';
 import './ConstructorDetail.css';
 
 function ConstructorDetail() {
@@ -179,7 +180,7 @@ function ConstructorDetail() {
           transition={{ duration: 0.6, delay: 0.7 }}
         >
           <h3>{getTranslation(language, 'history')}</h3>
-          <p className="history-text">{constructor.history}</p>
+          <p className="history-text">{getTeamTranslation(language, constructor.id, 'history')}</p>
         </motion.div>
 
         {/* Recent Form */}
@@ -190,7 +191,7 @@ function ConstructorDetail() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <h3>{getTranslation(language, 'recentForm')}</h3>
-          <p className="form-text">{constructor.recentForm}</p>
+          <p className="form-text">{getTeamTranslation(language, constructor.id, 'recentForm')}</p>
         </motion.div>
       </motion.div>
     </div>

@@ -12,7 +12,7 @@ import './App.css';
 export const LanguageContext = createContext();
 
 function App() {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('es');
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

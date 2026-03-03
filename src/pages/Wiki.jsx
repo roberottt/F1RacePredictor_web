@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageContext } from '../App';
 import { getTranslation } from '../translations';
 import { constructorsData, driversWikiList } from '../data/wikiData';
+import { getTeamTranslation } from '../data/wikiDataTranslations';
 import './Wiki.css';
 
 function Wiki() {
@@ -191,32 +192,32 @@ function Wiki() {
                         <span className="stat-value">{currentConstructor.worldChampionships}</span>
                       </div>
                       <div className="carousel-stat">
-                        <span className="stat-label">Total Wins</span>
+                        <span className="stat-label">{getTranslation(language, 'totalWins')}</span>
                         <span className="stat-value">{currentConstructor.totalWins}</span>
                       </div>
                     </div>
 
                     <div className="carousel-details">
                       <div className="detail-row">
-                        <span className="detail-label">Base:</span>
+                        <span className="detail-label">{getTranslation(language, 'base')}:</span>
                         <span className="detail-value">{currentConstructor.base}</span>
                       </div>
                       <div className="detail-row">
-                        <span className="detail-label">Team Chief:</span>
+                        <span className="detail-label">{getTranslation(language, 'teamChief')}:</span>
                         <span className="detail-value">{currentConstructor.teamChief}</span>
                       </div>
                       <div className="detail-row">
-                        <span className="detail-label">Power Unit:</span>
+                        <span className="detail-label">{getTranslation(language, 'powerUnit')}:</span>
                         <span className="detail-value">{currentConstructor.powerUnit}</span>
                       </div>
                       <div className="detail-row">
-                        <span className="detail-label">Chassis:</span>
+                        <span className="detail-label">{getTranslation(language, 'chassis')}:</span>
                         <span className="detail-value">{currentConstructor.chassis}</span>
                       </div>
                     </div>
 
                     <div className="carousel-drivers">
-                      <h4>Drivers 2026</h4>
+                      <h4>{getTranslation(language, 'drivers2026')}</h4>
                       <div className="drivers-list">
                         {currentConstructor.drivers.map((driver, idx) => (
                           <div key={idx} className="driver-card">
@@ -228,21 +229,14 @@ function Wiki() {
                     </div>
 
                     <div className="carousel-history">
-                      <h4>History</h4>
-                      <p>{currentConstructor.history}</p>
+                      <h4>{getTranslation(language, 'history')}</h4>
+                      <p>{getTeamTranslation(language, currentConstructor.id, 'history')}</p>
                     </div>
 
                     <div className="carousel-recent">
-                      <h4>Recent Form</h4>
-                      <p>{currentConstructor.recentForm}</p>
+                      <h4>{getTranslation(language, 'recentForm')}</h4>
+                      <p>{getTeamTranslation(language, currentConstructor.id, 'recentForm')}</p>
                     </div>
-
-                    <button 
-                      className="view-details-btn"
-                      onClick={() => handleConstructorClick(currentConstructor.id)}
-                    >
-                      View Full Details →
-                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -324,19 +318,19 @@ function Wiki() {
 
                     <div className="carousel-stats-grid">
                       <div className="carousel-stat">
-                        <span className="stat-label">Team</span>
+                        <span className="stat-label">{getTranslation(language, 'team')}</span>
                         <span className="stat-value driver-team">{currentDriver.team}</span>
                       </div>
                       <div className="carousel-stat">
-                        <span className="stat-label">Number</span>
+                        <span className="stat-label">{getTranslation(language, 'number')}</span>
                         <span className="stat-value">#{currentDriver.number}</span>
                       </div>
                       <div className="carousel-stat">
-                        <span className="stat-label">Code</span>
+                        <span className="stat-label">{getTranslation(language, 'code')}</span>
                         <span className="stat-value">{currentDriver.code}</span>
                       </div>
                       <div className="carousel-stat">
-                        <span className="stat-label">Nationality</span>
+                        <span className="stat-label">{getTranslation(language, 'nationality')}</span>
                         <span className="stat-value">{currentDriver.nationality}</span>
                       </div>
                     </div>
@@ -345,7 +339,7 @@ function Wiki() {
                       className="view-details-btn"
                       onClick={() => handleDriverClick(currentDriver.code)}
                     >
-                      View Driver Profile →
+                      {getTranslation(language, 'viewDriverProfile')} →
                     </button>
                   </div>
                 </div>

@@ -41,9 +41,7 @@ const RaceSelector = ({ onSelectRace }) => {
       <div className="selector-header">
         <h2>{getTranslation(language, 'selectRace')}</h2>
         <p className="selector-subtitle">
-          {language === 'en' 
-            ? 'Choose a season and race to predict the results' 
-            : 'Elige una temporada y carrera para predecir los resultados'}
+          {getTranslation(language, 'chooseSeasonAndRace')}
         </p>
       </div>
 
@@ -68,7 +66,7 @@ const RaceSelector = ({ onSelectRace }) => {
           <div className="form-group">
             <label htmlFor="race-select">
               <MapPin size={16} />
-              {language === 'en' ? 'Grand Prix' : 'Gran Premio'}
+              {getTranslation(language, 'grandPrix')}
             </label>
             <select 
               id="race-select"
@@ -78,7 +76,7 @@ const RaceSelector = ({ onSelectRace }) => {
               disabled={!selectedYear}
             >
               <option value="">
-                {language === 'en' ? 'Select a race...' : 'Selecciona una carrera...'}
+                {getTranslation(language, 'selectARace')}
               </option>
               {calendar.map((race) => (
                 <option key={race.round} value={race.round}>
@@ -94,7 +92,7 @@ const RaceSelector = ({ onSelectRace }) => {
             disabled={!selectedRound}
           >
             <Play size={18} />
-            {language === 'en' ? 'Predict' : 'Predecir'}
+            {getTranslation(language, 'predict')}
           </button>
         </div>
 

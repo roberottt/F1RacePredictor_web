@@ -360,35 +360,240 @@
 
 @media (max-width: 768px) {
   .standings-container {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .standings-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .season-selector {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .season-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .season-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8rem;
+    min-width: 70px;
   }
 
   .standings-tabs {
-    flex-direction: column;
+    width: 100%;
+    flex-direction: row;
+    padding: var(--spacing-xs);
   }
 
   .tab {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .standings-table-container {
+    padding: var(--spacing-sm);
+    overflow-x: visible;
   }
 
   .standings-table {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    width: 100%;
+    min-width: unset;
   }
 
   .standings-table th,
   .standings-table td {
-    padding: 0.8rem 0.5rem;
+    padding: 0.6rem 0.25rem;
+  }
+
+  .standings-table th {
+    font-size: 0.65rem;
+    white-space: nowrap;
+  }
+
+  .position-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  .position-cell {
+    width: 45px;
+    padding: 0.6rem 0.15rem !important;
+  }
+
+  .driver-cell {
+    min-width: unset;
+    width: auto;
   }
 
   .driver-name {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.3rem;
     align-items: flex-start;
+  }
+
+  .driver-number {
+    width: 24px;
+    height: 24px;
+    font-size: 0.65rem;
+  }
+
+  .driver-name-link {
+    font-size: 0.75rem !important;
+    line-height: 1.2;
+  }
+
+  .flag-img {
+    width: 32px;
+    height: 22px;
+  }
+
+  .nationality-cell {
+    min-width: unset;
+    width: 40px;
+    padding: 0.6rem 0.15rem !important;
+  }
+
+  .flag-container {
+    height: 22px;
+    min-height: 22px;
+  }
+
+  .constructor-cell,
+  .constructor-name-cell {
+    min-width: unset;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+
+  .constructor-info {
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .constructor-badge {
+    min-width: 35px;
+    height: 18px;
+    font-size: 0.55rem;
+    padding: 0 4px;
+  }
+
+  .constructor-name {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .points-cell {
+    font-size: 0.9rem;
+    min-width: unset;
+    width: auto;
+    padding: 0.6rem 0.25rem !important;
+  }
+
+  .wins-cell {
+    min-width: unset;
+    width: auto;
+    padding: 0.6rem 0.25rem !important;
+  }
+
+  .chart-tabs {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .chart-type-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .standings-container {
+    padding: 0.25rem;
+  }
+
+  .standings-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .season-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    min-width: 60px;
+  }
+
+  .tab {
+    padding: 0.6rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .standings-table-container {
+    padding: 0.4rem;
+  }
+
+  .standings-table {
+    font-size: 0.7rem;
+  }
+
+  .standings-table th,
+  .standings-table td {
+    padding: 0.5rem 0.15rem;
+  }
+
+  /* Ocultar columna de nacionalidad en móviles muy pequeños */
+  .nationality-cell {
+    display: none;
+  }
+
+  .position-badge {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+  }
+
+  .position-cell {
+    width: 40px;
+  }
+
+  .driver-number {
+    width: 22px;
+    height: 22px;
+    font-size: 0.6rem;
+  }
+
+  .driver-name-link {
+    font-size: 0.7rem !important;
+  }
+
+  .constructor-badge {
+    font-size: 0.5rem;
+    min-width: 32px;
+    height: 16px;
+  }
+
+  .constructor-name {
+    font-size: 0.65rem;
+  }
+
+  .points-cell {
+    font-size: 0.85rem;
+  }
+
+  .wins-cell {
+    font-size: 0.7rem;
+  }
+
+  .chart-type-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7rem;
   }
 }
 

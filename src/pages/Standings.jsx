@@ -368,7 +368,7 @@ function Standings() {
         >
           {driverStandings.length === 0 ? (
             <div className="no-data">
-              <p>No hay datos de standings disponibles para {season}</p>
+              <p>{getTranslation(language, 'noDataAvailable')} {season}</p>
             </div>
           ) : (
             <table className="standings-table">
@@ -463,7 +463,7 @@ function Standings() {
         >
           {constructorStandings.length === 0 ? (
             <div className="no-data">
-              <p>No hay datos de standings disponibles para {season}</p>
+              <p>{getTranslation(language, 'noDataAvailable')} {season}</p>
             </div>
           ) : (
             <table className="standings-table">

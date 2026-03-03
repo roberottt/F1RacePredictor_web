@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import { LanguageContext } from '../App';
 import { getTranslation } from '../translations';
 import { Home, Trophy, BarChart3, BookOpen, Globe } from 'lucide-react';
+import overcutLogo from '../assets/overcutlogo.png';
 import './Navigation.css';
 
 function Navigation() {
@@ -32,27 +33,41 @@ function Navigation() {
       >
         <div className="sidebar-content">
           {/* Logo */}
-          <div className="sidebar-logo">
-            <motion.div 
-              className="logo-icon"
-              whileHover={{ scale: 1.05 }}
-            >
-              🏎️
-            </motion.div>
+          <motion.div 
+            className="sidebar-logo"
+            animate={{
+              flexDirection: isCollapsed ? 'row' : 'column',
+              gap: isCollapsed ? '0' : '0rem'
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="logo-icon">
+              <motion.img 
+                src={overcutLogo} 
+                alt="Overcut"
+                initial={false}
+                animate={{ 
+                  width: isCollapsed ? '4.5rem' : '15rem',
+                  height: isCollapsed ? '4.5rem' : '15rem'
+                }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
             <AnimatePresence>
               {!isCollapsed && (
                 <motion.div
                   className="logo-text"
-                  initial={{ opacity: 0, width: 0 }}
-                  animate={{ opacity: 1, width: 'auto' }}
-                  exit={{ opacity: 0, width: 0 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2, delay: 0.1 }}
                 >
-                  F1 Predictor
+                  Overcut
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
 
           {/* Navigation Items */}
           <div className="sidebar-nav">

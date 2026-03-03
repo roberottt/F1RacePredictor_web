@@ -441,7 +441,7 @@ const DriverDetail = () => {
         
         // Si el piloto no está en 2026
         if (teamsForSeason === null) {
-          setError('Driver not racing in this season');
+          setError(getTranslation(language, 'driverNotRacing'));
           setLoading(false);
           return;
         }
@@ -504,7 +504,7 @@ const DriverDetail = () => {
         
         // Si el piloto no está en esta temporada (teams es null)
         if (teamsForSeason === null) {
-          setError('Driver not racing in this season');
+          setError(getTranslation(language, 'driverNotRacing'));
           return;
         }
         
@@ -521,11 +521,11 @@ const DriverDetail = () => {
           images: additionalInfo.images || ['https://placehold.co/400x500/333333/white?text=DRIVER+PHOTO']
         });
       } else {
-        setError('Driver not found');
+        setError(getTranslation(language, 'driverNotFound'));
       }
     } catch (err) {
       console.error('Error fetching driver data:', err);
-      setError('Error loading driver data');
+      setError(getTranslation(language, 'errorLoadingDriverData'));
     } finally {
       setLoading(false);
     }
@@ -565,7 +565,7 @@ const DriverDetail = () => {
       <div className="driver-detail-container">
         <div className="loading">
           <div className="loading-spinner"></div>
-          <p>Loading driver information...</p>
+          <p>{getTranslation(language, 'loadingDriverInfo')}</p>
         </div>
       </div>
     );
@@ -575,9 +575,9 @@ const DriverDetail = () => {
     return (
       <div className="driver-detail-container">
         <div className="error">
-          <p>Error loading driver information</p>
+          <p>{getTranslation(language, 'errorLoadingDriverInfo')}</p>
           <button onClick={() => navigate('/standings')} className="back-button">
-            ← Back to Standings
+            ← {getTranslation(language, 'backToStandings')}
           </button>
         </div>
       </div>
@@ -594,7 +594,7 @@ const DriverDetail = () => {
         whileHover={{ scale: 1.05, x: -5 }}
         whileTap={{ scale: 0.95 }}
       >
-        ← Back to Standings
+        ← {getTranslation(language, 'backToStandings')}
       </motion.button>
 
       <div className="season-selector-driver">
@@ -639,11 +639,11 @@ const DriverDetail = () => {
               <span className="flag-large">{getCountryFlag(driverData.nationality)}</span>
               {driverData.nationality}
             </span>
-            <span className="age">Age: {calculateAge(driverData.birthDate)}</span>
-            <span className="birth-date">Born: {new Date(driverData.birthDate).toLocaleDateString()}</span>
+            <span className="age">{getTranslation(language, 'age')}: {calculateAge(driverData.birthDate)}</span>
+            <span className="birth-date">{getTranslation(language, 'born')}: {new Date(driverData.birthDate).toLocaleDateString()}</span>
           </div>
           <div className="current-team">
-            <span className="team-label">Current Team:</span>
+            <span className="team-label">{getTranslation(language, 'currentTeam')}:</span>
             <span className="team-name">{driverData.team}</span>
           </div>
         </div>
@@ -661,7 +661,7 @@ const DriverDetail = () => {
         >
           <div className="stat-icon">🏆</div>
           <div className="stat-value">{driverData.championships}</div>
-          <div className="stat-label">Championships</div>
+          <div className="stat-label">{getTranslation(language, 'championships2')}</div>
         </motion.div>
 
         <motion.div 
@@ -670,7 +670,7 @@ const DriverDetail = () => {
         >
           <div className="stat-icon">🥇</div>
           <div className="stat-value">{driverData.wins}</div>
-          <div className="stat-label">Race Wins</div>
+          <div className="stat-label">{getTranslation(language, 'raceWins')}</div>
         </motion.div>
 
         <motion.div 
@@ -679,7 +679,7 @@ const DriverDetail = () => {
         >
           <div className="stat-icon">📊</div>
           <div className="stat-value">{driverData.total_points}</div>
-          <div className="stat-label">Points ({selectedSeason})</div>
+          <div className="stat-label">{getTranslation(language, 'pointsSeason')} ({selectedSeason})</div>
         </motion.div>
 
         <motion.div 
@@ -688,7 +688,7 @@ const DriverDetail = () => {
         >
           <div className="stat-icon">🏁</div>
           <div className="stat-value">P{driverData.position}</div>
-          <div className="stat-label">Current Position</div>
+          <div className="stat-label">{getTranslation(language, 'currentPosition')}</div>
         </motion.div>
       </motion.div>
 
@@ -698,7 +698,7 @@ const DriverDetail = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <h2>Career History</h2>
+        <h2>{getTranslation(language, 'careerHistory')}</h2>
         <div className="teams-list">
           {driverData.teams.map((team, index) => (
             <motion.div
@@ -722,7 +722,7 @@ const DriverDetail = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          <h2>{selectedSeason} Season Progress</h2>
+          <h2>{selectedSeason} {getTranslation(language, 'seasonProgress')}</h2>
           <div className="race-history-grid">
             {driverData.race_history.slice(0, 10).map((race, index) => (
               <motion.div

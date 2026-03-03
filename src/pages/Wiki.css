@@ -380,7 +380,7 @@
   top: 50vh;
   transform: translateY(-50%);
   pointer-events: none;
-  z-index: 200;
+  z-index: 9999;
   height: 60px;
 }
 
@@ -594,6 +594,7 @@
     left: 0;
     margin-left: 0;
     transform: translateY(-50%) translateX(0);
+    z-index: 9999;
   }
 
   .carousel-nav-left {
@@ -630,11 +631,15 @@
 @media (max-width: 768px) {
   .carousel-card {
     padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   .wiki-tabs {
     flex-direction: column;
-    max-width: 300px;
+    max-width: 90%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: var(--spacing-lg);
@@ -650,6 +655,7 @@
     left: 0;
     margin-left: 0;
     transform: translateY(-50%) translateX(0);
+    z-index: 9999;
   }
 
   .carousel-nav-left {
@@ -662,49 +668,120 @@
 
   .carousel-car-section {
     height: 100vh;
+    width: 100%;
   }
 
   .carousel-team-name {
     bottom: 60px;
+    width: 90%;
   }
 
   .carousel-team-name h2 {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
   }
 
   .team-logo-overlay {
-    max-width: 150px;
-    max-height: 45px;
+    max-width: 140px;
+    max-height: 42px;
   }
 
   .carousel-info {
     margin-top: 100vh;
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
+    width: 95%;
+    max-width: 95%;
+    box-sizing: border-box;
+  }
+
+  .team-full-name {
+    margin-bottom: 2rem;
   }
 
   .team-full-name h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .team-nationality {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .carousel-stats-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
+    gap: 0.8rem;
+    padding: 1.2rem 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
   }
 
   .stat-value {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .carousel-details {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.2rem 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .detail-row {
+    padding: 0.6rem;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: center;
+  }
+
+  .detail-label,
+  .detail-value {
+    font-size: 0.85rem;
+  }
+
+  .carousel-drivers,
+  .carousel-history,
+  .carousel-recent {
+    padding: 1.2rem 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .carousel-drivers h4,
+  .carousel-history h4,
+  .carousel-recent h4 {
+    font-size: 1.1rem;
+    padding-left: 0.75rem;
   }
 
   .drivers-list {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .driver-card {
+    padding: 0.8rem 1rem;
+  }
+
+  .driver-number {
+    font-size: 1.3rem;
+  }
+
+  .driver-name {
+    font-size: 1rem;
+  }
+
+  .carousel-history p,
+  .carousel-recent p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .view-details-btn {
+    padding: 1rem;
+    font-size: 1rem;
   }
 
   .carousel-nav {
@@ -715,32 +792,59 @@
 
   .carousel-indicators {
     transform: translateX(0);
+    gap: 0.6rem;
+    padding-bottom: 2rem;
+  }
+
+  .driver-carousel {
+    padding: 2rem 1rem;
   }
 
   .driver-carousel-header {
     flex-direction: column;
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .driver-number-large {
-    width: 140px;
-    height: 140px;
-    font-size: 4rem;
+    width: 130px;
+    height: 130px;
+    font-size: 3.5rem;
   }
 
   .driver-info-large h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .driver-team-name {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .driver-nationality-badge {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .driver-number-overlay {
+    top: 40px;
+    right: 40px;
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 480px) {
   .carousel-card {
     padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .wiki-tabs {
+    max-width: 95%;
+    width: 95%;
   }
 
   .carousel-nav-container {
@@ -748,63 +852,196 @@
     left: 0;
     margin-left: 0;
     transform: translateY(-50%) translateX(0);
+    z-index: 9999;
   }
 
   .carousel-nav-left {
-    left: 10px;
+    left: 8px;
   }
 
   .carousel-nav-right {
-    right: 10px;
+    right: 8px;
   }
 
   .carousel-car-section {
     height: 100vh;
+    width: 100%;
   }
 
   .carousel-team-name {
-    bottom: 40px;
+    bottom: 30px;
+    width: 95%;
   }
 
   .carousel-team-name h2 {
-    font-size: 2rem;
-    letter-spacing: 1px;
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
   }
 
   .team-logo-overlay {
-    max-width: 120px;
-    max-height: 35px;
+    max-width: 100px;
+    max-height: 30px;
   }
 
   .carousel-car-img {
-    max-width: 95%;
-    max-height: 65%;
+    max-width: 98%;
+    max-height: 60%;
   }
 
   .carousel-info {
     margin-top: 100vh;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5rem 1rem;
+    padding: 1.2rem 0.75rem;
+    width: 98%;
+    max-width: 98%;
+    box-sizing: border-box;
+  }
+
+  .team-full-name {
+    margin-bottom: 1.5rem;
   }
 
   .team-full-name h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .team-nationality {
+    font-size: 0.75rem;
+  }
+
+  .carousel-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 1rem 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-stat {
+    padding: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+
+  .carousel-details {
+    gap: 0.5rem;
+    padding: 1rem 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .detail-row {
+    padding: 0.5rem;
+  }
+
+  .detail-label,
+  .detail-value {
     font-size: 0.8rem;
+  }
+
+  .carousel-drivers,
+  .carousel-history,
+  .carousel-recent {
+    padding: 1rem 0.6rem;
+    margin-bottom: 1.5rem;
   }
 
   .carousel-drivers h4,
   .carousel-history h4,
   .carousel-recent h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding-left: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .drivers-list {
+    gap: 0.6rem;
+  }
+
+  .driver-card {
+    padding: 0.7rem 0.8rem;
+    gap: 0.75rem;
+  }
+
+  .driver-number {
+    font-size: 1.2rem;
+  }
+
+  .driver-name {
+    font-size: 0.9rem;
+  }
+
+  .carousel-history p,
+  .carousel-recent p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .view-details-btn {
+    padding: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .carousel-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 1.8rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1.6rem;
+  }
+
+  .carousel-indicators {
+    gap: 0.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .indicator.active {
+    width: 30px;
+  }
+
+  .driver-carousel {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .driver-carousel-header {
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .driver-number-large {
+    width: 110px;
+    height: 110px;
+    font-size: 3rem;
+  }
+
+  .driver-info-large h3 {
+    font-size: 1.5rem;
+  }
+
+  .driver-team-name {
+    font-size: 0.95rem;
+  }
+
+  .driver-nationality-badge {
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .driver-number-overlay {
+    top: 30px;
+    right: 30px;
+    width: 85px;
+    height: 85px;
+    font-size: 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.4);
   }
 }

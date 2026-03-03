@@ -1,0 +1,235 @@
+.race-countdown-section {
+  margin-bottom: var(--spacing-3xl);
+  padding: var(--spacing-2xl) 0;
+}
+
+.countdown-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.countdown-card {
+  background: var(--surface-secondary);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.countdown-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-primary);
+}
+
+.countdown-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.countdown-header h3 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+/* Next Race Card */
+.next-race-card {
+  background: linear-gradient(135deg, rgba(186, 0, 0, 0.05) 0%, var(--surface-secondary) 100%);
+  border: 2px solid var(--color-primary);
+}
+
+.race-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.race-flag {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag-image {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--border-color);
+}
+
+.race-name {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.race-name-small {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.race-location {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Countdown Timer */
+.countdown-timer {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  margin: var(--spacing-lg) 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.days-number {
+  font-size: 4rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-xs);
+}
+
+.days-label {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-medium);
+}
+
+.race-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.race-date-small {
+  font-size: var(--font-size-xs);
+}
+
+/* Previous Race Card */
+.previous-race-card {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, var(--surface-secondary) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.previous-race-card:hover {
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.winner-info {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  margin: var(--spacing-lg) 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.winner-trophy {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+  animation: trophy-bounce 2s ease-in-out infinite;
+}
+
+@keyframes trophy-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.winner-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+/* Season Over Card */
+.season-over-card {
+  grid-column: 1 / -1;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(186, 0, 0, 0.05) 0%, var(--surface-secondary) 100%);
+}
+
+.season-over-card p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-md);
+  margin: var(--spacing-lg) 0 0 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .countdown-container {
+    grid-template-columns: 1fr;
+  }
+
+  .race-name {
+    font-size: var(--font-size-xl);
+  }
+
+  .days-number {
+    font-size: 3rem;
+  }
+
+  .flag-image {
+    width: 100px;
+    height: 70px;
+  }
+
+  .winner-trophy {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .race-countdown-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .countdown-card {
+    padding: var(--spacing-lg);
+  }
+
+  .race-name {
+    font-size: var(--font-size-lg);
+  }
+
+  .flag-image {
+    width: 80px;
+    height: 60px;
+  }
+
+  .days-number {
+    font-size: 2.5rem;
+  }
+
+  .countdown-header h3 {
+    font-size: var(--font-size-md);
+  }
+}

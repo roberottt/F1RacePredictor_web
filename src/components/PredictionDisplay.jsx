@@ -242,12 +242,10 @@ const PredictionDisplay = ({ year, round }) => {
             🏁
           </motion.div>
           <h2 className="coming-soon-title">
-            {language === 'es' ? 'Predicciones 2026 Próximamente' : 'Season 2026 Predictions Coming Soon'}
+            {getTranslation(language, 'predictions2026ComingSoon')}
           </h2>
           <p className="coming-soon-text">
-            {language === 'es' 
-              ? 'Las predicciones para la temporada 2026 estarán disponibles cuando comience el campeonato. ¡Vuelve pronto!' 
-              : 'Predictions for the 2026 season will be available when the championship begins. Come back soon!'}
+            {getTranslation(language, 'predictions2026Text')}
           </p>
           <motion.div 
             className="coming-soon-badge"
@@ -255,7 +253,7 @@ const PredictionDisplay = ({ year, round }) => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            🏎️ {language === 'es' ? 'Temporada 2026' : 'Season 2026'} 🏎️
+            🏎️ {getTranslation(language, 'season2026')} 🏎️
           </motion.div>
         </div>
       </motion.div>
@@ -314,7 +312,7 @@ const PredictionDisplay = ({ year, round }) => {
               <h3 className="podium-driver-name">{podium[0].driver}</h3>
               <p className="podium-team">{podium[0].team}</p>
               <div className="podium-medal">🥇</div>
-              <div className="winner-badge">Winner</div>
+              <div className="winner-badge">{getTranslation(language, 'winner')}</div>
             </div>
           )}
           
@@ -371,14 +369,14 @@ const PredictionDisplay = ({ year, round }) => {
 
                 {prediction.grid_position && (
                   <div className="result-stat">
-                    <span className="stat-label-mini">Grid</span>
+                    <span className="stat-label-mini">{getTranslation(language, 'grid')}</span>
                     <span className="stat-value-mini">P{prediction.grid_position}</span>
                   </div>
                 )}
 
                 {prediction.probability && (
                   <div className="result-stat">
-                    <span className="stat-label-mini">Prob.</span>
+                    <span className="stat-label-mini">{getTranslation(language, 'prob')}</span>
                     <span className="stat-value-mini">{(prediction.probability * 100).toFixed(0)}%</span>
                   </div>
                 )}

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { LanguageContext } from '../App';
 import { getTranslation } from '../translations';
 import { Brain, TrendingUp, BarChart3, ArrowRight, Zap } from 'lucide-react';
+import RaceCountdown from '../components/RaceCountdown';
 import './Home.css';
 
 function Home() {
@@ -48,6 +49,9 @@ function Home() {
           </div>
         </motion.section>
 
+        {/* Race Countdown Section */}
+        <RaceCountdown />
+
         {/* Features Grid */}
         <motion.section 
           className="features-section"
@@ -56,7 +60,7 @@ function Home() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="section-header">
-            <h2>{language === 'en' ? 'What We Offer' : 'Qué Ofrecemos'}</h2>
+            <h2>{getTranslation(language, 'whatWeOffer')}</h2>
           </div>
           
           <div className="features-grid">
