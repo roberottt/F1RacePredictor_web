@@ -17,6 +17,8 @@ function Wiki() {
   const navigate = useNavigate();
   const carouselRef = useRef(null);
   const driverCarouselRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +39,32 @@ function Wiki() {
 
   const constructors = Object.values(constructorsData);
   const drivers = driversWikiList;
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const swipeThreshold = 50; // Minimum distance for a swipe
+    const diff = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left - next
+        handleNext();
+      } else {
+        // Swipe right - previous
+        handlePrev();
+      }
+    }
+
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
 
   const handleNext = () => {
     setDirection(1);
@@ -137,6 +165,9 @@ function Wiki() {
                     style={{ 
                       '--team-color': currentConstructor.teamColor
                     }}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                   >
                     <div className="carousel-nav-container">
                       <button 
@@ -279,6 +310,9 @@ function Wiki() {
                 <div className="carousel-card">
                   <div 
                     className="carousel-car-section driver-photo-section"
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                   >
                     <div className="carousel-nav-container">
                       <button 
